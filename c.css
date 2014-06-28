@@ -77,6 +77,9 @@ a {
 .blue-link, .blue-hover:hover {
     color: #09c;
 }
+.gold-underline {
+    border-bottom-color: #efb700!important;
+}
 
 .underline-link {
     border-bottom: 1px solid;
@@ -448,8 +451,9 @@ a {
 }
 
 .addinfo-text {
-    color: #999;
-    line-height: 19px;
+    line-height: 15px;
+    margin-bottom: 7px;
+    display: block;
 }
 
 .catalog-item__addinfo:hover {
@@ -738,7 +742,16 @@ input[type="checkbox"]:checked:disabled + i {
     border: 1px solid gray;
     border-radius: 4px;
     height: 100px;
+    position: relative;;
 }
+.item-images li img {
+    -webkit-transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 95%;
+}
+
 .item-images li.selected {
     border: 1px solid gold;
 }
@@ -775,15 +788,7 @@ input[type="checkbox"]:checked:disabled + i {
 }
 
 .buy-panelbox {
-    font-family: 'PT Sans', sans-serif;
     width: 200px;
-    color: #363636;
-}
-
-.buy-panelbox div, .buy-panelbox span, .buy-panelbox a, .buy-panelbox input {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .buy-panelbox input[type=radio] {
@@ -810,33 +815,33 @@ i.sp.radio.selected {
 .add i.sp {
     width: 24px;
     height: 24px;
-    background-position: -44px -176px;
+    background-position: -24px -320px;
 }
 
 .deduct i.sp {
     width: 24px;
     height: 24px;
-    background-position: -20px -176px;
+    background-position: 0px -320px
 }
 
 .deduct.disabled i.sp {
-    background-position: -68px -176px !important;
+    background-position: -48px -320px!important;
 }
 
 .deduct:hover i.sp {
-    background-position: -20px -200px;
+    background-position: 0px -344px;
 }
 
 .deduct:active i.sp {
-    background-position: -20px -224px;
+    background-position: 0px -368px;
 }
 
 .add:hover i.sp {
-    background-position: -44px -200px;
+    background-position: -24px -344px;
 }
 
 .add:active i.sp {
-    background-position: -44px -224px;
+    background-position: -24px -368px;
 }
 
 .opacity50 {
@@ -915,7 +920,7 @@ i.sp.radio.selected {
     font-size: 32px;
 }
 
-.new-price, .credit {
+.credit {
     cursor: pointer;
 }
 
@@ -980,17 +985,17 @@ i.sp.radio.selected {
 }
 
 .buy-btn i.sp {
-    width: 200px;
-    height: 56px;
-    background-position: -20px -8px;
+    width: 140px;
+    height: 40px;
+    background-position: 0px -620px;
 }
 
 .buy-btn:hover i.sp {
-    background-position: -20px -64px;
+    background-position: 0px -660px;
 }
 
 .buy-btn:active i.sp {
-    background-position: -20px -120px;
+    background-position: 0px -700px;
 }
 
 .credit-btn {
@@ -1023,7 +1028,6 @@ i.sp.radio.selected {
 }
 
 .link {
-    font-size: 20px;
     cursor: pointer;
 }
 
@@ -1032,13 +1036,9 @@ i.sp.radio.selected {
     border-bottom: 1px dotted;
 }
 
-.dotted-link:hover, .dotted-link:active {
-    border-bottom: 0px;
-}
-
 .click-buy-call, .click-buy-brd, .present-buy {
     margin-bottom: 10px;
-    font-size: 0;
+
 }
 
 .click-buy-brd, .click-buy-call {
@@ -1057,11 +1057,17 @@ i.sp.radio.selected {
 }
 
 .click-buy-brd {
+    width: 140px;
+    height: 40px;
     border: 2px solid #efc22e;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    padding: 0 0 5px 30px;
+    padding: 8px 0;
+    text-align: center;
+}
+.click-buy-brd a {
+    font-size: 16px;
 }
 
 .click-buy-call i.sp {
@@ -1184,4 +1190,23 @@ li:hover .footer-menu__item-7 {
     font-size: 10px;
     color: #333;
     text-align: center;
+}
+
+.popup-link {
+    width: 6px;
+    height: 6px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+.popup-link-blue {
+    background-position: -20px -400px;
+
+}
+.popup-link-black {
+    background-position: -26px -406px;
+
+}
+.popup-link-red {
+    background-position: -32px -412px;
+
 }

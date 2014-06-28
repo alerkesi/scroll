@@ -1,3 +1,3 @@
-/**
- * Created by alerkesi on 28.06.14.
- */
+var openMap = function(){
+    $('#js-map-popup').show();
+};
