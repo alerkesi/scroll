@@ -90,6 +90,7 @@
             <a href="javascript:void(0)" class="buy-btn click-buy-brd">
                 <span class="link dotted-link">Купить в 1 клик</span>
             </a>
+
             <div style="margin-bottom: 15px; font-size: 16px;">
                 <a class="link dotted-link gold-underline" href="javascript:void(0)">В кредит за
                     <span class="bold">9 455 &#8399;</span></a>
@@ -141,30 +142,22 @@
         </div>
         <div class="clearfix" style="margin-top: 20px;">
             <div class="flt-l col-1-2">
-                <div>
-                    <a href="" class="otzyv">
-                        <i class="starbar sp"><i class="starbar_w4 sp"></i></i>
+                <a href="" class="otzyv flt-l">
+                    <i class="starbar sp"><i class="starbar_w4 sp"></i></i>
                             <span class="link dotted-link"><span class="gray">Отзывы </span><span
                                     class="black">24</span></span>
-                    </a>
-                </div>
-                <div>
-                    <a class="drell sp rel" href=""><i class=""
-                                                       style="background-image: url('src/tv_0004_Векторный-смарт-объект.png')"></i></a>
-                </div>
+                </a>
+                <a class="drell rel" href=""><i class=""
+                                                style="background-image: url('src/tv_0004_Векторный-смарт-объект.png')"></i></a>
             </div>
             <div class="flt-l col-1-2">
-                <div>
-                    <a class="present-link" href="">
-                        <i class="sp present"></i>
-                        <span class="link dotted-link gray">Хочу в подарок</span><i
-                            class="sp popup-link popup-link-red"></i>
-                    </a>
-                </div>
-                <div>
-                    <a class="present-to-buy sp rel" href=""><i class=""
-                                                                style="background-image: url('src/tv_0005_Подарок-к-покупке.png')"></i></a>
-                </div>
+                <a class="present-link flt-r" href="">
+                    <i class="sp present"></i>
+                    <span class="link dotted-link gray">Хочу в подарок</span><i
+                        class="sp popup-link popup-link-red"></i>
+                </a>
+                <a class="present-to-buy rel" href=""><i class=""
+                                                         style="background-image: url('src/tv_0005_Подарок-к-покупке.png')"></i></a>
             </div>
         </div>
     </div>
@@ -180,6 +173,7 @@
                 <li class="catalog__item">
                     <!--Выключен бордер для первого элемента-->
                     <!--<div class="lborder"></div>-->
+                    <div class="item-number">1</div>
                     <img src="" alt="" class="flt-l catalog__item__photo">
                     <a href="" class="catalog__item__name underline-link blue">Кофемашина Krups XN 3005/3006/3008
                         Nespresso</a>
@@ -190,6 +184,7 @@
                     </div>
                 </li>
                 <li class="catalog__item">
+                    <div class="item-number">2</div>
                     <div class="lborder"></div>
                     <img src="" alt="" class="flt-l catalog__item__photo">
                     <a href="" class="catalog__item__name underline-link blue">Пылесос MIELE S 6210 Parquet Twister</a>
@@ -200,6 +195,7 @@
                     </div>
                 </li>
                 <li class="catalog__item">
+                    <div class="item-number">3</div>
                     <div class="lborder"></div>
                     <img src="" alt="" class="flt-l catalog__item__photo">
                     <a href="" class="catalog__item__name underline-link blue">Холодильник LG GA-B439 BAOA </a>
@@ -290,11 +286,14 @@
                             <th class="param-left-clm">
                                 <span class="param-name">Поддержка 3D</span>
                             </th>
-                            <td class="param-right-clm param-value">активная технология <i class="sp qst hint--top" data-hint="Smart TV"></i></td>
+                            <td class="param-right-clm param-value">активная технология <i class="sp qst hint--top"
+                                                                                           data-hint="Smart TV"></i>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
-                    <a style="margin: 10px 0 20px; display: inline-block" class="link dotted-link blue" href="">Подробные характеристики</a>
+                    <a style="margin: 10px 0 20px; display: inline-block" class="link dotted-link blue" href="">Подробные
+                        характеристики</a>
 
                     <p>
                         Благодаря новым ТВ технологиям, телевизор серии 7 преобразует обычное изображение в
@@ -306,7 +305,7 @@
                         картинки с учетом типа контента или источника, благодаря чему изображение получается
                         более четким, ярким и более реалистичным.</p>
                     <ul class="rostest list-none clearfix">
-                        <li class="selected">
+                        <li>
                             <i class="sp rst"></i>
                             <span>Ростест, официальная<br>гарантия</span>
                         </li>
@@ -408,7 +407,6 @@
                 </ul>
                 <label style="display: block; margin-top: 15px;" class="clearfix rel">
                     <textarea class="otzyv-textarea" placeholder="Напишите свой отзыв об этом товаре..."></textarea>
-                    <button class="button buy-btn" style="margin-bottom: 15px;">Опубликовать</button>
                 </label>
 
                 <div>
@@ -426,7 +424,7 @@
     <div style="font-size: 20px; margin-bottom: 20px;">
         Модели с похожими характеристиками
     </div>
-    <ul class="analog-window__catalog list-none">
+    <ul class="analog-window__catalog list-none clearfix">
         <li class="catalog__item">
             <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
             <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
