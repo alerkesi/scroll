@@ -814,7 +814,6 @@ input[type="checkbox"]:checked:disabled + i {
 }
 
 .vert-scroll-line {
-
     padding: 30px 0;
 }
 
@@ -2171,20 +2170,63 @@ hr.dashed-line {
     padding: 10px 35px 20px 35px;
     margin: 100px 0;
 }
+.popup .title {
 
+}
 .picture-popup {
     width: 95%;
     height: 95%;
     margin: 2% 0;
+    position: relative;
 }
-.picture-popup .item-pic {
-
-
+.picture-popup .content {
+    position: absolute;
+    left: 35px;
+    right: 35px;
+    top: 30px;
+    bottom: 20px;
+}
+.picture-popup .content-left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0;
+    width: 60px;
+    height: 100%;
+}
+.picture-popup .content-zoom {
+    float: left;
+    position: absolute;
+    left: 80px;
+    right: 0px;
+    bottom: 0px;
+    top: 0;
+}
+.picture-popup .js-mainPic {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: visible;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 
 }
-.picture-popup .col-1-2 {
-    width: 100%;
+.picture-popup .content-zoom:after, .picture-popup .content-zoom:before {
+    width: 104px;
+    height: 104px;
+    background: url('../images/sprite.png') -248px -107px;
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
+
 .picture-popup .lupe {
     width: 104px;
     height: 104px;

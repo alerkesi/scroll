@@ -1,24 +1,31 @@
+/* extend */
+if ($.fn.hasOwnProperty('hide')) {
+    var _oldhide = $.fn.hide;
+    $.fn.hide = function (speed, callback) {
+        $(this).trigger('hide');
+        return _oldhide.apply(this, arguments);
+    }
+}
 $(document).ready(function () {
     /* popup modules */
-
+    var itemName = $('.js-item-name').text();
     $('.js-showPicturePopup').click(function () {
         var $popup = $('#picture-popup');
-
+        var $cZoom = $popup.find('.content-zoom');
+        var $cLeft = $popup.find('.content-left');
+        var $cTitle =$popup.find('.title');
         openPopup($popup);
-        var $picsContent = $('#pictures-content').clone();
-
-        $popup.find('.content').append($picsContent);
-        var $littleImages = $('.js-littlePic');
-        var $mainPic = $('.js-mainPic');
-        var oldSrc = $mainPic.attr('src');
-        $littleImages.mouseenter(function () {
-            tempChangeMainPic(this)
-        })
-            .click(function(){
-                changeMainPic(this)
-            });
-        $('.item-images').mouseleave(function () {
-            restoreMainPic();
+        var $picsList = $('#pictures-content .vert-scroll').clone();
+        //stretch height within the window
+        $picsList.find('.vert-scroll-tabs').css('height', $cLeft.height() - 60);
+        var $mainPic = $('#pictures-content .js-mainPic').clone();
+        $cTitle.text(itemName);
+        $cLeft.append($picsList);
+        $cZoom.append($mainPic);
+        $('#picture-popup').bind('hide', function () {
+            $cLeft.empty();
+            $cTitle.text('');
+            $cZoom.empty();
         });
     });
 
@@ -27,11 +34,14 @@ $(document).ready(function () {
     $popupOut.click(function () {
         closePopup($(this));
     });
+    document.onkeydown = function(e) {
+        if (e.keyCode === 27) {closePopup($popupOut);}
+    };
     $popup.
         on('click', '.popup-close', function () {
             closePopup($popupOut);
         })
-        .on('click', function(e){
+        .on('click', function (e) {
             e.stopPropagation();
         });
     function openPopup($elem) {
@@ -50,6 +60,7 @@ $(document).ready(function () {
             document.body.classList.remove('noscroll');
         }
     }
+
     /* ------ */
 
     /* change main item images when mouseEnter on little */
@@ -74,7 +85,7 @@ $(document).ready(function () {
     $littleImages.mouseenter(function () {
         tempChangeMainPic(this)
     })
-        .click(function(){
+        .click(function () {
             changeMainPic(this)
         });
     $('.item-images').mouseleave(function () {
