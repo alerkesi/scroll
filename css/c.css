@@ -1593,7 +1593,7 @@ hr.dashed-line {
 
 }
 
-.lborder + .catalog__item__photo {
+.lborder ~ .catalog__item__photo {
     margin-left: 5px;
 }
 
@@ -2097,5 +2097,8 @@ hr.dashed-line {
 .catalog__item .item-number {
     position: absolute;
     top: -12px;
+    left: 0;
+}
+.lborder + .item-number {
     left: 5px;
 }

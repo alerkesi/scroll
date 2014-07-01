@@ -8,7 +8,9 @@ $(document).ready(function () {
     var $mainPic = $('.js-mainPic');
     var oldSrc = $mainPic.attr('src');
     var tempChangeMainPic = function (el) {
+        $mainPic.hide();
         $mainPic.attr('src', $(el).find('img').attr('src'));
+        $mainPic.fadeIn(300);
     };
     var restoreMainPic = function () {
         $mainPic.attr('src', oldSrc);
