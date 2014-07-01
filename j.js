@@ -1,7 +1,56 @@
 $(document).ready(function () {
-    var openMap = function () {
-        $('#js-map-popup').show();
-    };
+    /* popup modules */
+
+    $('.js-showPicturePopup').click(function () {
+        var $popup = $('#picture-popup');
+
+        openPopup($popup);
+        var $picsContent = $('#pictures-content').clone();
+
+        $popup.find('.content').append($picsContent);
+        var $littleImages = $('.js-littlePic');
+        var $mainPic = $('.js-mainPic');
+        var oldSrc = $mainPic.attr('src');
+        $littleImages.mouseenter(function () {
+            tempChangeMainPic(this)
+        })
+            .click(function(){
+                changeMainPic(this)
+            });
+        $('.item-images').mouseleave(function () {
+            restoreMainPic();
+        });
+    });
+
+    var $popup = $('.popup');
+    var $popupOut = $('.popup-out');
+    $popupOut.click(function () {
+        closePopup($(this));
+    });
+    $popup.
+        on('click', '.popup-close', function () {
+            closePopup($popupOut);
+        })
+        .on('click', function(e){
+            e.stopPropagation();
+        });
+    function openPopup($elem) {
+        var $p = $elem.find('.popup');
+        $p.show();
+        $p.scrollTop($(window).scrollTop());
+        $elem.fadeIn('slow');
+        if (!document.body.classList.contains('noscroll')) {
+            document.body.classList.add('noscroll');
+        }
+    }
+
+    function closePopup($elem) {
+        $elem.fadeOut('slow');
+        if (document.body.classList.contains('noscroll')) {
+            document.body.classList.remove('noscroll');
+        }
+    }
+    /* ------ */
 
     /* change main item images when mouseEnter on little */
     var $littleImages = $('.js-littlePic');

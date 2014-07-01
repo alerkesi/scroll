@@ -60,7 +60,7 @@
     content: attr(data-hint);
     position: absolute;
     width: auto;
-    min-width: 200px;
+    white-space: nowrap;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
@@ -110,7 +110,7 @@
     margin-left: -18px; }
 .hint--top:before, .hint--top:after {
     bottom: 100%;
-    left: 50%; }
+    right: 0; }
 .hint--top:hover:after, .hint--top:hover:before, .hint--top:focus:after, .hint--top:focus:before {
     -webkit-transform: translateY(-8px);
     -moz-transform: translateY(-8px);

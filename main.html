@@ -43,24 +43,30 @@
     </div>
 </div>
 <div class="clearfix item-content">
-    <div class="flt-l col-1-2">
+    <div id="pictures-content" class="flt-l col-1-2">
         <div class="flt-l vert-scroll vert-scroll-line rel">
             <div class="vert-scroll-tabs">
                 <ul class="item-images">
-                    <li class="js-littlePic"><img src="src/tv_0000_televizor-samsung-ue40f7000at_54431_3-копия.png" alt=""></li>
-                    <li class="js-littlePic"><img src="src/tv_0001_televizor-samsung-ue40f7000at_54431_4-копия.png" alt=""></li>
-                    <li class="js-littlePic"><img src="src/tv_0002_televizor-samsung-ue40f7000at_54431_9-копия.png" alt=""></li>
-                    <li class="js-littlePic"><img src="src/tv_0003_televizor-samsung-ue40f7000at_54431_10-копия.png" alt=""></li>
-                    <li class="js-littlePic"><img src="src/tv_0006_televizor-samsung-ue40f7000at_54431_1.png" alt=""></li>
-                    <li class="js-littlePic"><img src="src/tv_0007_televizor-samsung-ue40f7000at_54431_1-копия-2.png" alt=""></li>
-                    <li class="js-littlePic"><img src="src/tv_0000_televizor-samsung-ue40f7000at_54431_3-копия.png" alt=""></li>
+                    <li class="js-littlePic"><img src="src/tv_0006_televizor-samsung-ue40f7000at_54431_1.png" alt="">
+                    </li>
+                    <li class="js-littlePic"><img src="src/BWFyASilqK.jpg" alt=""></li>
+                    <li class="js-littlePic"><img src="src/tv_0002_televizor-samsung-ue40f7000at_54431_9-копия.png"
+                                                  alt=""></li>
+                    <li class="js-littlePic"><img src="src/tv_0003_televizor-samsung-ue40f7000at_54431_10-копия.png"
+                                                  alt=""></li>
+                    <li class="js-littlePic"><img src="src/tv_0006_televizor-samsung-ue40f7000at_54431_1.png" alt="">
+                    </li>
+                    <li class="js-littlePic"><img src="src/tv_0007_televizor-samsung-ue40f7000at_54431_1-копия-2.png"
+                                                  alt=""></li>
+                    <li class="js-littlePic"><img src="src/tv_0000_televizor-samsung-ue40f7000at_54431_3-копия.png"
+                                                  alt=""></li>
                 </ul>
             </div>
             <a href="javascript:void(0)" class="vert-arrow arrow-forward sp"></a>
             <a href="javascript:void(0)" class="vert-arrow arrow-back sp"></a>
         </div>
         <div class="item-pic flt-l">
-            <a class="lupe-c" href="javascript:showPopup()">
+            <a class="lupe-c js-showPicturePopup">
                 <img class="js-mainPic" src="images/sam_1.jpg" alt="televisor"/>
                 <i class="sp lupe"></i>
             </a>
@@ -68,39 +74,40 @@
 
     </div>
     <div class="flt-l col-1-2">
-        <div class="flt-l buy-panelbox" style="text-align: left;">
-            <span class="presence presence__yes">В наличии</span>
-            <span class="presence presence__order hidden">Под заказ</span>
-            <span class="presence presence__no hidden">Нет в наличии</span>
+        <div class="clearfix rel">
+            <div class="buy-panelbox flt-l" style="text-align: left;">
+                <span class="presence presence__yes">В наличии</span>
+                <span class="presence presence__order hidden">Под заказ</span>
+                <span class="presence presence__no hidden">Нет в наличии</span>
 
-            <div class="price-block">
-                <div class="old-price"><span class="">32 990 &#8399;</span></div>
-                <div class="new-price">
-                    <strong>29 999 &#8399;</strong>
+                <div class="price-block">
+                    <div class="old-price"><span class="">32 990 &#8399;</span></div>
+                    <div class="new-price">
+                        <strong>29 999 &#8399;</strong>
+                    </div>
+                </div>
+                <div class="counter">
+                    <a href="javascript:void(0)" class="deduct disabled"><i class="sp"></i></a>
+                    <input value="1">
+                    <a href="javascript:void(0)" class="add"><i class="sp"></i></a>
+                    <span>шт.</span>
+                </div>
+                <a href="javascript:void(0)" class="buy-btn"><i class="sp"></i></a>
+                <a href="javascript:void(0)" class="buy-btn click-buy-brd">
+                    <span class="link dotted-link">Купить в 1 клик</span>
+                </a>
+
+                <div style="margin-bottom: 15px; font-size: 16px;">
+                    <a class="link dotted-link gold-underline" href="javascript:void(0)">В кредит за
+                        <span class="bold">9 455 &#8399;</span></a>
                 </div>
             </div>
-            <div class="counter">
-                <a href="javascript:void(0)" class="deduct disabled"><i class="sp"></i></a>
-                <input value="1">
-                <a href="javascript:void(0)" class="add"><i class="sp"></i></a>
-                <span>шт.</span>
-            </div>
-            <a href="javascript:void(0)" class="buy-btn"><i class="sp"></i></a>
-            <a href="javascript:void(0)" class="buy-btn click-buy-brd">
-                <span class="link dotted-link">Купить в 1 клик</span>
-            </a>
-
-            <div style="margin-bottom: 15px; font-size: 16px;">
-                <a class="link dotted-link gold-underline" href="javascript:void(0)">В кредит за
-                    <span class="bold">9 455 &#8399;</span></a>
-            </div>
-        </div>
-        <div class="market__right">
-            <div>
-                <span class="market-head-article">Доставка</span>
-                <i class="sp footer-menu__item footer-menu__item-small footer-menu__item-small-1"></i>
-            </div>
-            <div>
+            <div class="item-tile flt-r">
+                <div>
+                    <span class="market-head-article">Доставка</span>
+                    <i class="sp footer-menu__item footer-menu__item-small footer-menu__item-small-1"></i>
+                </div>
+                <div>
                                     <span class="addinfo-text"><span>Доставка по </span><a href="javascript:openMap();"
                                                                                            class="link blue-link dotted-link">Москве
                                         и МО</a><i class="sp popup-link popup-link-blue"></i>
@@ -113,24 +120,25 @@
                                         <span class="italic"><span
                                                 class="bold">бесплатно</span> в среду, 11.02.2014</span>
                                     </span>
-            </div>
-            <div>
-                <span class="market-head-article">Услуги</span>
-                <i class="sp footer-menu__item footer-menu__item-small footer-menu__item-small-2"></i>
-            </div>
-            <div>
-                <label class="for-checkbox">
-                    <input type="checkbox" name="checkbox" hidden/>
-                    <i class="sp"></i><span>Проверить на битые пиксели 690 </span>
-                </label>
-                <label class="for-checkbox">
-                    <input type="checkbox" name="checkbox" hidden/>
-                    <i class="sp"></i><span>Подключение Smart TV 500 </span>
-                    <i class="sp qst hint--top" data-hint="Smart TV"></i>
-                </label>
+                </div>
+                <div>
+                    <span class="market-head-article">Услуги</span>
+                    <i class="sp footer-menu__item footer-menu__item-small footer-menu__item-small-2"></i>
+                </div>
+                <div>
+                    <label class="for-checkbox">
+                        <input type="checkbox" name="checkbox" hidden/>
+                        <i class="sp"></i><span>Проверить на битые пиксели 690 </span>
+                    </label>
+                    <label class="for-checkbox">
+                        <input type="checkbox" name="checkbox" hidden/>
+                        <i class="sp"></i><span>Подключение Smart TV 500 </span>
+                        <i class="sp qst hint--top" data-hint="Smart TV"></i>
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="" style="clear: both;">
+        <div>
             <p style="font-size: 13px; line-height: 16px;">Благодаря новым ТВ технологиям, телевизор
                 серии 7 преобразует
                 обычное изображение в нечто просто фантастическое. Этот умный телевизор включает систему
@@ -224,29 +232,27 @@
 <div style="font-size: 20px; margin-top: 20px;">
     Наши преимущества и гарантии
 </div>
-<div>
-    <ul class="list-none fora-list clearfix">
-        <li>
-            <i class="sp footer-menu__item footer-menu__item-2 flt-l js-link"></i>
-            <span>Ассортимент <br>и низкие цены</span>
-        </li>
-        <li>
-            <span class="lborder"></span>
-            <i class="sp footer-menu__item footer-menu__item-3 flt-l js-link"></i>
-            <span>Гарантированный <br>обмен и возврат</span>
-        </li>
-        <li>
-            <span class="lborder"></span>
-            <i class="sp footer-menu__item footer-menu__item-4 flt-l js-link"></i>
-            <span>Оплата любыми <br>способами</span>
-        </li>
-        <li>
-            <span class="lborder"></span>
-            <i class="sp footer-menu__item footer-menu__item-7 flt-l js-link"></i>
-            <span>Профессиональные <br>консультанты</span>
-        </li>
-    </ul>
-</div>
+<ul class="list-none fora-list clearfix">
+    <li>
+        <i class="sp footer-menu__item footer-menu__item-2 flt-l js-link"></i>
+        <span>Ассортимент <br>и низкие цены</span>
+    </li>
+    <li>
+        <span class="lborder"></span>
+        <i class="sp footer-menu__item footer-menu__item-3 flt-l js-link"></i>
+        <span>Гарантированный <br>обмен и возврат</span>
+    </li>
+    <li>
+        <span class="lborder"></span>
+        <i class="sp footer-menu__item footer-menu__item-4 flt-l js-link"></i>
+        <span>Оплата любыми <br>способами</span>
+    </li>
+    <li>
+        <span class="lborder"></span>
+        <i class="sp footer-menu__item footer-menu__item-7 flt-l js-link"></i>
+        <span>Профессиональные <br>консультанты</span>
+    </li>
+</ul>
 <div class="clearfix" style="margin-top: 30px;">
 <div class="flt-l tabs-window">
     <ul class="tabs list-none clearfix">
@@ -443,7 +449,7 @@
                 </div>
                 <div class="flt-l col-1-2">
                     <div><span class="red catalog__item__old-price">127 990 ⃏</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </div>
             </div>
         </li>
@@ -466,7 +472,7 @@
                 </div>
                 <div class="flt-l col-1-2">
                     <div><span class="red catalog__item__old-price">127 990 ⃏</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </div>
             </div>
         </li>
@@ -489,7 +495,7 @@
                 </div>
                 <div class="flt-l col-1-2">
                     <div><span class="red catalog__item__old-price">127 990 ⃏</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </div>
             </div>
         </li>
@@ -512,7 +518,7 @@
                 </div>
                 <div class="flt-l col-1-2">
                     <div><span class="red catalog__item__old-price">127 990 ⃏</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </div>
             </div>
         </li>
@@ -536,7 +542,7 @@
 </div>
 <footer class="footer rel pre-top-shadow">
     <i class="sp close"></i>
-    <ul style="text-align: center; margin-bottom: 20px;">
+    <ul style="text-align: center; margin-bottom: 40px;">
         <li class="footer-tabs selected"><a href="javascript:void(0)"><i
                 class="sp recent"></i><span class="link dotted-link">Недавно просмотренные</span></a></li>
         <li class="footer-tabs"><a href="javascript:void(0)"><i
@@ -547,19 +553,19 @@
             <ul class="horiz-scroll-catalog list-none">
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 21 покупатель</span>
                     </div>
-                    <div><i class="vborder pres"></i><span>В наличии</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
@@ -568,12 +574,12 @@
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 61 покупатель</span>
                     </div>
-                    <div><i class="vborder pres"></i><span>В наличии</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
@@ -581,27 +587,12 @@
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 21 покупатель</span>
                     </div>
-                    <div><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
-                        UE40F6400</a>
-
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
@@ -611,12 +602,12 @@
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 21 покупатель</span>
                     </div>
-                    <div><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
@@ -626,12 +617,12 @@
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 21 покупатель</span>
                     </div>
-                    <div><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
@@ -641,12 +632,12 @@
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 21 покупатель</span>
                     </div>
-                    <div><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
                 <li class="catalog__item">
                     <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
                         UE40F6400</a>
 
                     <div class="clearfix rate-gray">
@@ -656,8 +647,23 @@
                         <i class="sp smile-gray"></i>
                         <span> &#8211; 21 покупатель</span>
                     </div>
-                    <div><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                </li>
+                <li class="catalog__item">
+                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                    <a href="" class="catalog__item__name blue">Телевизор Samsung
+                        UE40F6400</a>
+
+                    <div class="clearfix rate-gray">
+                        <i class="sp smile-gray"></i>
+                        <i class="sp smile-gray"></i>
+                        <i class="sp smile-gray"></i>
+                        <i class="sp smile-gray"></i>
+                        <span> &#8211; 21 покупатель</span>
+                    </div>
+                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                 </li>
             </ul>
         </div>
@@ -665,12 +671,19 @@
         <a href="javascript:void(0)" class="horiz-arrow arrow-back sp"></a>
     </div>
 </footer>
-
+</div>
+</div>
+</div>
 </div>
 
-</div>
+<div id="picture-popup" class="popup-out" style="display: none">
+    <div class="popup picture-popup">
+        <a href="javascript:void(0)" class="popup-close"><i></i></a>
 
-</div>
+        <div class="content clearfix">
+
+        </div>
+    </div>
 </div>
 </body>
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>

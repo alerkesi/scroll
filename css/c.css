@@ -168,25 +168,22 @@ a {
 
 .market__wrapper, .header, .footer {
     min-width: 980px;
-
 }
-@media all and (min-width: 1160px) {
+
+@media all and (min-width: 1180px) {
     .footer {
-        width: 1160px;
+        width: 1180px;
     }
 }
-@media all and (max-width: 1160px) {
+
+@media all and (max-width: 1179px) {
     .footer {
         width: 100%;
     }
 }
-@media all and (max-width: 980px) {
-    .footer {
-        width: 980px;
-    }
-}
+
 .footer {
-    max-width: 1160px;
+    max-width: 1180px;
 }
 
 .market__wrapper {
@@ -198,24 +195,14 @@ a {
 }
 
 .market__content {
-    padding: 4px 20px;
+    padding: 4px 20px 250px 20px;
     margin: 0 auto;
     background-color: #fff;
-    max-width: 1160px;
+    max-width: 1180px;
 }
 
-.market__left {
-    float: left;
-    width: 80%;
-    width: calc(100% - 220px);
-    padding-right: 20px;
-}
-
-.market__right {
-    float: left;
-    position: relative;
-    width: 20%;
-    width: calc(260px);
+.item-tile {
+    width: 260px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -867,7 +854,7 @@ input[type="checkbox"]:checked:disabled + i {
 /************* item card attributes *************/
 
 .buy-panelbox {
-    width: 200px;
+    width: 140px;
 }
 
 .buy-panelbox input[type=radio] {
@@ -1157,15 +1144,15 @@ i.sp.radio.selected {
 }
 
 .footer-menu__item-small-1 {
-    background-position: -920px 0px;
+    background-position: -920px 0;
 }
 
 .footer-menu__item-small-2 {
-    background-position: -960px 0px;
+    background-position: -960px 0;
 }
 
 .footer-menu__item-1 {
-    background-position: -640px 0px;
+    background-position: -640px 0;
 }
 
 li:hover .footer-menu__item-1 {
@@ -1173,7 +1160,7 @@ li:hover .footer-menu__item-1 {
 }
 
 .footer-menu__item-2 {
-    background-position: -680px 0px;
+    background-position: -680px 0;
 }
 
 li:hover .footer-menu__item-2 {
@@ -1181,7 +1168,7 @@ li:hover .footer-menu__item-2 {
 }
 
 .footer-menu__item-3 {
-    background-position: -720px 0px;
+    background-position: -720px 0;
 }
 
 li:hover .footer-menu__item-3 {
@@ -1189,7 +1176,7 @@ li:hover .footer-menu__item-3 {
 }
 
 .footer-menu__item-4 {
-    background-position: -760px 0px;
+    background-position: -760px 0;
 }
 
 li:hover .footer-menu__item-4 {
@@ -1197,7 +1184,7 @@ li:hover .footer-menu__item-4 {
 }
 
 .footer-menu__item-5 {
-    background-position: -800px 0px;
+    background-position: -800px 0;
 }
 
 li:hover .footer-menu__item-5 {
@@ -1205,7 +1192,7 @@ li:hover .footer-menu__item-5 {
 }
 
 .footer-menu__item-6 {
-    background-position: -840px 0px;
+    background-position: -840px 0;
 }
 
 li:hover .footer-menu__item-6 {
@@ -1213,7 +1200,7 @@ li:hover .footer-menu__item-6 {
 }
 
 .footer-menu__item-7 {
-    background-position: -880px 0px;
+    background-position: -880px 0;
 }
 
 li:hover .footer-menu__item-7 {
@@ -1263,6 +1250,7 @@ li:hover .footer-menu__item-7 {
 }
 
 .item-pic img {
+    max-width: 380px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1326,7 +1314,7 @@ li:hover .footer-menu__item-7 {
     font-size: 13px;
     color: #999;
     line-height: 16px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .art {
@@ -1582,7 +1570,7 @@ hr.dashed-line {
 
 }
 
-.catalog__item > *:not(.flt-l) {
+.catalog__item > *:not(.flt-l):not(:last-child) {
     margin-bottom: 5px;
 }
 
@@ -1918,14 +1906,15 @@ hr.dashed-line {
 
 .footer {
     z-index: 11;
+    height: 250px;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 8px 20px;
     position: fixed;
+    overflow: visible;
+    margin: auto;
+    left: 0;
     bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
+    right: 0;
 }
 
 .footer-tabs {
@@ -1966,7 +1955,7 @@ hr.dashed-line {
 }
 
 .horiz-scroll-line.model-scroll {
-    height: 210px;
+    height: 168px;
 }
 
 .model-scroll .catalog__item {
@@ -1975,21 +1964,35 @@ hr.dashed-line {
     padding: 0;
     font-size: 13px;
 }
-
-.catalog__item__photo {
-    max-width: 100%;
+.model-scroll .catalog__item__name {
+    text-decoration: underline;
+    font-size: 13px;
+    line-height: 15px;
+}
+.model-scroll .catalog__item__name:hover {
+    text-decoration: none;
 }
 
+.model-scroll .catalog__item__photo {
+    max-height: 68px;
+}
 .model-scroll .catalog__item__price {
-
+    line-height: 13px;
+    height: 13px;
+    float: left;
 }
 
 .vborder {
-    display: inline-block;
+    float: left;
     width: 2px;
-    height: 1em;
+    height: 13px;
     vertical-align: middle;
-    margin: 0 5px;
+    margin-right: 4px;
+}
+.vborder + span {
+    float: left;
+    line-height: 13px;
+    height: 13px;
 }
 
 .vborder.pres {
@@ -2022,6 +2025,7 @@ hr.dashed-line {
 
 .catalog__item__photo {
     max-width: 100%;
+    display: block;
 }
 
 .market-head-article {
@@ -2099,6 +2103,91 @@ hr.dashed-line {
     top: -12px;
     left: 0;
 }
+
 .lborder + .item-number {
     left: 5px;
 }
+
+/* Popup elements */
+.popup-close i {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 16px;
+    height: 16px;
+    background-position: -380px -330px;
+}
+
+.popup-close i:hover {
+    background-position: -396px -330px;
+}
+
+.popup-close i:active {
+    background-position: -412px -330px;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.popup-out {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+    zoom: 1;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.popup-out > * {
+    -webkit-transform: translateZ(0px);
+}
+
+.popup {
+    width: 702px;
+    position: absolute;
+    overflow: auto;
+    left: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    top: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    padding: 10px 35px 20px 35px;
+    margin: 100px 0;
+}
+
+.picture-popup {
+    width: 95%;
+    height: 95%;
+    margin: 2% 0;
+}
+.picture-popup .item-pic {
+
+
+
+}
+.picture-popup .col-1-2 {
+    width: 100%;
+}
+.picture-popup .lupe {
+    width: 104px;
+    height: 104px;
+    background-position: -248px -107px;
+}
+/* ------- */
