@@ -418,6 +418,7 @@ a {
 }
 
 .presence {
+    height: 20px;
     line-height: 20px;
     padding: 1px 8px 2px 8px;
     -webkit-border-radius: 2px;
@@ -506,7 +507,7 @@ a {
 }
 
 .addinfo-text {
-    line-height: 15px;
+    line-height: 18px;
     margin-bottom: 7px;
     display: block;
 }
@@ -517,10 +518,6 @@ a {
 
 .catalog-item__addinfo:hover .addinfo-text {
     color: #333;
-}
-
-.addinfo-text span {
-    vertical-align: middle;
 }
 
 .qst {
@@ -1336,10 +1333,6 @@ li:hover .footer-menu__item-7 {
     margin-right: 10px;
 }
 
-.smile + span {
-    padding-left: 5px;
-}
-
 .smile {
     background-position: -80px -180px;
     width: 20px;
@@ -1352,11 +1345,10 @@ li:hover .footer-menu__item-7 {
 }
 
 .smile-small {
-    -moz-transform: scale(0.8); /* Для Firefox */
-    -ms-transform: scale(0.8); /* Для IE */
-    -webkit-transform: scale(0.8); /* Для Safari, Chrome, iOS */
-    -o-transform: scale(0.8); /* Для Opera */
-    transform: scale(0.8);
+    background-position: -100px -196px;
+    width: 16px;
+    height: 16px;
+    float: left;
 }
 
 .smile-small + .smile-small {
@@ -1372,6 +1364,11 @@ li:hover .footer-menu__item-7 {
 
 .smile-gray + .smile-gray {
     margin-left: -8px;
+}
+
+.smile + span, .smile-small + span, .smile-gray + span {
+    float: left;
+    margin-left: .5em;
 }
 
 .otzyv, .present-link {
