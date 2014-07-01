@@ -69,7 +69,8 @@ a {
 .market input,
 .presence,
 .otzyv-textarea,
-.social-counter {
+.social-counter,
+.footer {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -165,9 +166,27 @@ a {
     font-size: 24px;
 }
 
-.market__wrapper, .header {
+.market__wrapper, .header, .footer {
     min-width: 980px;
 
+}
+@media all and (min-width: 1160px) {
+    .footer {
+        width: 1160px;
+    }
+}
+@media all and (max-width: 1160px) {
+    .footer {
+        width: 100%;
+    }
+}
+@media all and (max-width: 980px) {
+    .footer {
+        width: 980px;
+    }
+}
+.footer {
+    max-width: 1160px;
 }
 
 .market__wrapper {
@@ -1874,60 +1893,42 @@ hr.dashed-line {
 
 .pre-top-shadow {
     margin-top: 20px;
-    padding-top: 30px;
-}
-
-.top-shadow:before,
-.top-shadow:after {
-
-}
-
-.top-shadow:before,
-.top-shadow:after,
-.bottom-shadow:before,
-.bottom-shadow:after {
-    background-image: url("../images/sprite.png");
-    position: absolute;
-    content: "";
-    height: 11px;
+    padding-top: 10px;
 }
 
 .pre-top-shadow:before, .pre-top-shadow:after {
     background-image: url("../images/sprite.png");
-    background-position: 0 -800px;
     position: absolute;
     content: "";
     height: 11px;
     top: -11px;
     -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
+
 .pre-top-shadow:before {
-    right: 0;
-    width: 45px;
-}
-.pre-top-shadow:after {
-    left: 0;
-    right: 45px;
-    top: -11px;
     background-position: -1955px -800px;
-}
-.bottom-shadow:before,
-.top-shadow:before {
-    bottom: -11px;
-    background-position: 0 -800px;
-}
-
-.bottom-shadow:before,
-.top-shadow:before {
-    left: 0;
-    right: 45px;
-}
-
-.bottom-shadow:after,
-.top-shadow:after {
     width: 45px;
+    left: 0;
+}
+
+.pre-top-shadow:after {
+    background-position: 0 -800px;
+    left: 45px;
     right: 0;
-    background-position: -1955px -500px;
+}
+
+.footer {
+    z-index: 11;
+    background-color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
 }
 
 .footer-tabs {
