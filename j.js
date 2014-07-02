@@ -13,20 +13,75 @@ $(document).ready(function () {
         var $popup = $('#picture-popup');
         var $cZoom = $popup.find('.content-zoom');
         var $cLeft = $popup.find('.content-left');
-        var $cTitle =$popup.find('.title');
+        var $cTitle = $popup.find('.title-big');
         openPopup($popup);
+
         var $picsList = $('#pictures-content .vert-scroll').clone();
-        //stretch height within the window
-        $picsList.find('.vert-scroll-tabs').css('height', $cLeft.height() - 60);
         var $mainPic = $('#pictures-content .js-mainPic').clone();
         $cTitle.text(itemName);
         $cLeft.append($picsList);
         $cZoom.append($mainPic);
-        $('#picture-popup').bind('hide', function () {
+        $popup.on('hide', function () {
+
             $cLeft.empty();
             $cTitle.text('');
             $cZoom.empty();
         });
+        setMouseenterOnLittlePic(document.getElementById('picture-popup'));
+        $cZoom.find('.js-mainPic').click(function () {
+            var self = this;
+            if ($(self).hasClass('zoomed')) {
+                $cZoom.removeClass('zoomed');
+                $(self).removeClass('zoomed');
+                $cZoom.unbind();
+                $(self).css({
+                    transform: 'none'
+                })
+            } else {
+                $cZoom.addClass('zoomed');
+                $(self).addClass('zoomed');
+                $cZoom.mousemove(function (event) {
+                    var dragArea = {
+                        height: $cZoom[0].clientHeight,
+                        width: $cZoom[0].clientWidth,
+                        posX: getOffsetRect($cZoom[0]).left,
+                        posY: getOffsetRect($cZoom[0]).top,
+                        curPosX: event.pageX - $cZoom[0].posX,
+                        curPosY: event.pageY - $cZoom[0].posY
+                    };
+                    var xPerc = -(event.pageX - dragArea.posX) / dragArea.width * 100 + '%',
+                        yPerc = -(event.pageY - dragArea.posY) / dragArea.height * 100 + '%';
+                    $(self).css({
+                        transform: 'translate(' + xPerc + ',' + yPerc + ')'
+                    })
+                })
+            }
+            function getOffsetRect(elem) {
+                // (1)
+                var box = elem.getBoundingClientRect()
+
+                // (2)
+                var body = document.body
+                var docElem = document.documentElement
+
+                // (3)
+                var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop
+                var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft
+
+                // (4)
+                var clientTop = docElem.clientTop || body.clientTop || 0
+                var clientLeft = docElem.clientLeft || body.clientLeft || 0
+
+                // (5)
+                var top = box.top + scrollTop - clientTop
+                var left = box.left + scrollLeft - clientLeft
+
+                return { top: Math.round(top), left: Math.round(left) }
+            }
+
+        });
+
+
     });
 
     var $popup = $('.popup');
@@ -34,8 +89,10 @@ $(document).ready(function () {
     $popupOut.click(function () {
         closePopup($(this));
     });
-    document.onkeydown = function(e) {
-        if (e.keyCode === 27) {closePopup($popupOut);}
+    document.onkeydown = function (e) {
+        if (e.keyCode === 27) {
+            closePopup($popupOut);
+        }
     };
     $popup.
         on('click', '.popup-close', function () {
@@ -62,13 +119,20 @@ $(document).ready(function () {
     }
 
     /* ------ */
-
+    setMouseenterOnLittlePic(document.getElementById('pictures-content'));
     /* change main item images when mouseEnter on little */
-    var $littleImages = $('.js-littlePic');
-    var $mainPic = $('.js-mainPic');
+
+    /* --- */
+
+});
+var setMouseenterOnLittlePic = function (container) {
+
+    var $littleImages = $(container).find('.js-littlePic');
+    var $mainPic = $(container).find('.js-mainPic');
+    var $imagesScrollArea = $(container).find('.item-images');
     var oldSrc = $mainPic.attr('src');
     var tempChangeMainPic = function (el) {
-        $mainPic.hide();
+        $mainPic.css({display: 'none'});
         $mainPic.attr('src', $(el).find('img').attr('src'));
         $mainPic.fadeIn(300);
     };
@@ -82,15 +146,14 @@ $(document).ready(function () {
         $mainPic.attr('src', oldSrc);
     };
 
-    $littleImages.mouseenter(function () {
-        tempChangeMainPic(this)
+    $littleImages.mouseenter(function (e) {
+        e.stopPropagation();
+        tempChangeMainPic(this);
     })
         .click(function () {
             changeMainPic(this)
         });
-    $('.item-images').mouseleave(function () {
+    $imagesScrollArea.mouseleave(function () {
         restoreMainPic();
     });
-    /* --- */
-
-});
+};

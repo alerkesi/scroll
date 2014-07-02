@@ -2170,9 +2170,6 @@ hr.dashed-line {
     padding: 10px 35px 20px 35px;
     margin: 100px 0;
 }
-.popup .title {
-
-}
 .picture-popup {
     width: 95%;
     height: 95%;
@@ -2183,49 +2180,63 @@ hr.dashed-line {
     position: absolute;
     left: 35px;
     right: 35px;
-    top: 30px;
+    top: 45px;
     bottom: 20px;
 }
 .picture-popup .content-left {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     bottom: 0;
     width: 60px;
     height: 100%;
 }
 .picture-popup .content-zoom {
-    float: left;
     position: absolute;
     left: 80px;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     top: 0;
+    overflow: hidden;
 }
+.picture-popup .vert-scroll-line, .picture-popup .vert-scroll-tabs {
+    height: 100%;
+}
+
 .picture-popup .js-mainPic {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     overflow: visible;
-    margin: auto;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-
+    cursor: url('../images/zoom_increase.png'), auto;
 }
-.picture-popup .content-zoom:after, .picture-popup .content-zoom:before {
-    width: 104px;
-    height: 104px;
-    background: url('../images/sprite.png') -248px -107px;
-    content: "";
-    position: absolute;
-    margin: auto;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+.picture-popup .js-mainPic.zoomed {
+    max-height: none;
+    max-width: none;
+    /*left: 50%;*/
+    /*top: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+    /*-webkit-transform: translate(-50%, -50%);*/
+    /*-moz-transform: translate(-50%, -50%);*/
+    cursor: url('../images/zoom_reduce.png'), auto;
 }
+/*.picture-popup .content-zoom:after, .picture-popup .content-zoom:before {*/
+    /*width: 104px;*/
+    /*height: 104px;*/
+    /*background: url('../images/sprite.png') -248px -107px;*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*margin: auto;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+/*}*/
 
 .picture-popup .lupe {
     width: 104px;
