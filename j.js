@@ -35,7 +35,7 @@ $(document).ready(function () {
                 $(self).removeClass('zoomed');
                 $cZoom.unbind();
                 $(self).css({
-                    transform: 'none'
+                    transform: 'translate(-50%, -50%)'
                 })
             } else {
                 $cZoom.addClass('zoomed');
@@ -120,11 +120,20 @@ $(document).ready(function () {
 
     /* ------ */
     setMouseenterOnLittlePic(document.getElementById('pictures-content'));
-    /* change main item images when mouseEnter on little */
-
-    /* --- */
-
+    var $footBody = $('footer.footer').find('.footer-body');
+    $('footer.footer').on('click', '.close', function(){
+        $footBody.slideUp(400);
+    }).on('click', '.footer-tab', function(){
+            $footBody.slideDown(400);
+        });
+    $('.catalog__item__name').text(function(){
+        return this.text.ellipsis(50);
+    });
+    toggleTab();
 });
+/* change main item images when mouseEnter on little */
+
+
 var setMouseenterOnLittlePic = function (container) {
 
     var $littleImages = $(container).find('.js-littlePic');
@@ -157,3 +166,108 @@ var setMouseenterOnLittlePic = function (container) {
         restoreMainPic();
     });
 };
+String.prototype.ellipsis = function (maxLength) {
+    return this.length > maxLength ? this.substr(0, maxLength - 3) + '...' : this;
+};
+var toggleTab = function() {
+    $('.tab-menu li').click(function(){
+        var clMenu = $(this).closest('.tab-menu'),
+            clContent = clMenu.next('.tabs-content');
+        clMenu.children('li').removeClass('selected');
+        clContent.children('li').removeClass('selected');
+        $(this).addClass('selected');
+        var targetTabContent = clContent.children("[data-tab-id$='"+this.id+"']");
+        targetTabContent.addClass('selected');
+
+    })
+};
+
+/* Catalog scroller */
+var horizScrolls = $('.horiz-scroll-line');
+
+horizScrolls.on('.arrow-back', 'click', function () {
+    right();
+});
+horizScrolls.on('.arrow-forward', 'click', function () {
+    left();
+});
+
+//var bdc = document.getElementsByClassName('basket__desktop__catalog')[0];
+
+horizScrolls.each(function(index, self){
+    self.catalog = $(self).find('.horiz-scroll-catalog');
+    self.tabs = $(self).find('.catalog__item');
+    self.delta = self.tabs.outerWidth(true);
+    self.tabsWidth = self.tabs.length * self.delta;
+    self.tabMenu = parseInt($(self).find('.horiz-scroll-tabs').width() / self.delta) * self.delta;
+    if (self.addEventListener) {
+        if ('onwheel' in document) {
+            // IE9+, FF17+
+            self.addEventListener("wheel", bindScroll, false);
+        } else if ('onmousewheel' in document) {
+            // ���������� ������� �������
+            self.addEventListener("mousewheel", bindScroll, false);
+        } else {
+            // 3.5 <= Firefox < 17, ����� ������ ������� DOMMouseScroll ���������
+            self.addEventListener("MozMousePixelScroll", bindScroll, false);
+        }
+    } else { // IE<9
+        self.attachEvent("onmousewheel", bindScroll);
+    }
+});
+
+
+function bindScroll(e) {
+    e.preventDefault();
+    if ($(this.catalog).is(':animated')) {
+        return false;
+    }
+    var whDelta = e.deltaY || e.detail || e.wheelDelta;
+    if (whDelta > 0 && isLeft(this)) {
+        right(this);
+    } else if (whDelta < 0 && isRight(this)) {
+        left(this);
+    }
+}
+
+var right = function (th) {
+    $(th.catalog).animate({ left: "+=" + th.delta }, 350, function () {
+        checkSwitch(th);
+    });
+};
+var left = function (th) {
+    $(th.catalog).animate({ left: "-=" + th.delta }, 350, function () {
+        checkSwitch(th);
+    });
+};
+var checkSwitch = function (th) {
+    if (isRight(th)) {
+        $(th).find('.arrow-forward').show();
+    } else {
+        $(th).find('arrow-forward').hide();
+    }
+    if (isLeft(th)) {
+        $(th).find('arrow-back').show();
+    } else {
+        $(th).find('arrow-back').hide();
+    }
+};
+var isRight = function (th) {
+    var leftHide = parseInt($(th.catalog).css('left'));
+    var rightHide = th.tabsWidth + leftHide - th.tabMenu;
+    if (rightHide > 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+var isLeft = function (th) {
+    var leftHide = parseInt($(th.catalog).css('left'));
+    if (leftHide === 0) {
+        return false;
+    } else if (leftHide < 0) {
+        return true;
+    }
+};
+/* End Catalog scroller */
+/* --- */

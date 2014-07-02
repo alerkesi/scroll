@@ -182,8 +182,8 @@
                     <!--<div class="lborder"></div>-->
                     <div class="item-number">1</div>
                     <img src="" alt="" class="flt-l catalog__item__photo">
-                    <a href="" class="catalog__item__name underline-link blue">Кофемашина Krups XN 3005/3006/3008
-                        Nespresso</a>
+                    <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
+                        UE40F6400 asdfkjasdf asdf;lksadjf dfdfdfdfdfdfdfdfdfdfdfdf</a>
 
                     <div class="bott">
                         <span class="bold catalog__item__price">58 000 ⃏</span>
@@ -255,24 +255,26 @@
 </ul>
 <div class="clearfix" style="margin-top: 30px;">
 <div class="flt-l tabs-window">
-    <ul class="tabs list-none clearfix">
-        <li id="tab1" class="selected"><a href="">Обзор</a></li>
-        <li id="tab2">
-            <a class="link dotted-link" href="javascript:void(0)"><span class="gray">Характеристики</span></a></li>
-        <li id="tab3">
-            <a class="link dotted-link" href="javascript:void(0)"><span class="gray">Отзывы</span><span
+    <ul class="tabs list-none clearfix tab-menu">
+        <li id="windowTab1" class="selected">
+            <a class="link dotted-link" href="javascript:void(0)">Обзор</a></li>
+        </li>
+        <li id="windowTab2">
+            <a class="link dotted-link" href="javascript:void(0)">Характеристики</a></li>
+        <li id="windowTab3">
+            <a class="link dotted-link" href="javascript:void(0)">Отзывы<span
                     class="black"> 24</span></a></li>
-        <li id="tab4">
-            <a class="link dotted-link" href="javascript:void(0)"><span class="gray">Аксессуары</span><span
+        <li id="windowTab4">
+            <a class="link dotted-link" href="javascript:void(0)">Аксессуары<span
                     class="black"> 144</span></a>
             <i class="sp popup-link popup-link-black"></i></li>
     </ul>
     <ul class="tabs-content list-none">
-        <li id="tab1-content">
+        <li data-tab-id="windowTab1" class="tab-content selected">
             <div>
                 <div class="bold">Описание</div>
                 <hr class="solid-line"/>
-                <div class="tab-content">
+                <div class="">
                     <table class="a-card__params">
                         <tbody>
                         <tr>
@@ -358,7 +360,7 @@
                     <li>
                         <div>
                             <div class="user">
-                                <img class="user-ava" src="images/sam_1.jpg" alt=""/>
+                                <img class="user-ava sp" src="" alt=""/>
                                 <span class="user-name flt-l">Ксения Булгакова</span>
                                 <span class="user-garant garant-positive italic gray"><i class="sp"></i><span>отзыву можно доверять</span></span>
                             </div>
@@ -389,7 +391,7 @@
                     <li>
                         <div>
                             <div class="user">
-                                <img class="user-ava" src="images/sam_2.jpg" alt=""/>
+                                <img class="user-ava sp" src="" alt=""/>
                                 <span class="user-name flt-l">Стрыкало</span>
                                 <span class="user-garant garant-positive italic gray"><i class="sp"></i><span>отзыву можно доверять</span></span>
                             </div>
@@ -420,9 +422,214 @@
                 </div>
             </div>
         </li>
-        <li id="tab2-content"></li>
-        <li id="tab3-content"></li>
-        <li id="tab4-content"></li>
+        <li data-tab-id="windowTab2" class="tab-content">
+            <div>
+                <div class="bold">Описание</div>
+                <hr class="solid-line"/>
+                <div class="">
+                    <table class="a-card__params">
+                        <tbody>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Диагональ экрана</span>
+                            </th>
+                            <td class="param-right-clm param-value">24"</td>
+                        </tr>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Разрешение экрана</span>
+                            </th>
+                            <td class="param-right-clm param-value">1920x1080 (16:9)</td>
+                        </tr>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Поддержка 3D</span>
+                            </th>
+                            <td class="param-right-clm param-value">активная технология <i class="sp qst hint--top"
+                                                                                           data-hint="Smart TV"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div>
+                <div class="bold">Изображение</div>
+                <hr class="solid-line"/>
+                <div class="">
+                    <table class="a-card__params">
+                        <tbody>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Диагональ экрана</span>
+                            </th>
+                            <td class="param-right-clm param-value">24"</td>
+                        </tr>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Разрешение экрана</span>
+                            </th>
+                            <td class="param-right-clm param-value">1920x1080 (16:9)</td>
+                        </tr>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Поддержка 3D</span>
+                            </th>
+                            <td class="param-right-clm param-value">активная технология <i class="sp qst hint--top"
+                                                                                           data-hint="Smart TV"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div>
+                <div class="bold">Прием сигнала</div>
+                <hr class="solid-line"/>
+                <div class="">
+                    <table class="a-card__params">
+                        <tbody>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Диагональ экрана</span>
+                            </th>
+                            <td class="param-right-clm param-value">24"</td>
+                        </tr>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Разрешение экрана</span>
+                            </th>
+                            <td class="param-right-clm param-value">1920x1080 (16:9)</td>
+                        </tr>
+                        <tr>
+                            <th class="param-left-clm">
+                                <span class="param-name">Поддержка 3D</span>
+                            </th>
+                            <td class="param-right-clm param-value">активная технология <i class="sp qst hint--top"
+                                                                                           data-hint="Smart TV"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </li>
+        <li data-tab-id="windowTab3" class="tab-content">
+            <div>
+                <hr class="solid-line"/>
+                <label style="display: block; margin-top: 15px;" class="clearfix rel">
+                    <textarea class="otzyv-textarea" placeholder="Напишите свой отзыв об этом товаре..."></textarea>
+                </label>
+
+                <ul>
+                    <li>
+                        <div>
+                            <div class="user">
+                                <img class="user-ava sp" src="" alt=""/>
+                                <span class="user-name flt-l">Ксения Булгакова</span>
+                                <span class="user-garant garant-positive italic gray"><i class="sp"></i><span>отзыву можно доверять</span></span>
+                            </div>
+                            <div class="model-rate">
+                                <i class="starbar sp"><i class="starbar_w5 sp"></i></i>
+                                <span class="gray">отличная модель</span>
+                            </div>
+                            <div>
+                                <p><span class="bold">Достоинства: </span>Хорошее изображение, неплохой звук,
+                                    достаточно быстрая работа в смарт тв,
+                                    дизайн</p>
+
+                                <p><span class="bold">Недостатки: </span>Немного задумывается перед выключением,
+                                    хотя в остальном на пульт
+                                    отзывается быстро. Живет своей жизнью (постоянно выскакивает голосовое
+                                    управление,
+                                    пару раз сам включался, один раз когда все уже спали)</p>
+
+                                <p><span class="bold">Комментарии: </span>Смарт тв работает быстро (сравниваю с
+                                    Samsung UE32F6540, в нем намного
+                                    медленнее). К пульту быстро привыкаешь, в принципе все довольно просто и
+                                    эргономично.
+                                    Многофункциональный телек. Поставила бы пять если бы не выше описанные глюки,
+                                    которые как я поняла из отзывов не редкость...</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="user">
+                                <img class="user-ava sp" src="" alt=""/>
+                                <span class="user-name flt-l">Стрыкало</span>
+                                <span class="user-garant garant-positive italic gray"><i class="sp"></i><span>отзыву можно доверять</span></span>
+                            </div>
+                            <div>
+                                <i class="starbar sp"><i class="starbar_w5 sp"></i></i>
+                                <span class="gray">отличная модель</span>
+                            </div>
+                            <div>
+                                <p><span class="bold">Достоинства: </span>Все просто супер, и пульт с кнопочками!
+                                </p>
+
+                                <p><span class="bold">Недостатки: </span>Их просто не может быть, телек - идеален
+                                </p>
+
+                                <p><span class="bold">Комментарии: </span>Сломался через день, купил такой же, о
+                                    своем выборе не жалею!!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="user">
+                                <img class="user-ava sp" src="" alt=""/>
+                                <span class="user-name flt-l">Стрыкало</span>
+                                <span class="user-garant garant-positive italic gray"><i class="sp"></i><span>отзыву можно доверять</span></span>
+                            </div>
+                            <div>
+                                <i class="starbar sp"><i class="starbar_w5 sp"></i></i>
+                                <span class="gray">отличная модель</span>
+                            </div>
+                            <div>
+                                <p><span class="bold">Достоинства: </span>Все просто супер, и пульт с кнопочками!
+                                </p>
+
+                                <p><span class="bold">Недостатки: </span>Их просто не может быть, телек - идеален
+                                </p>
+
+                                <p><span class="bold">Комментарии: </span>Сломался через день, купил такой же, о
+                                    своем выборе не жалею!!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="user">
+                                <img class="user-ava sp" src="" alt=""/>
+                                <span class="user-name flt-l">Стрыкало</span>
+                                <span class="user-garant garant-positive italic gray"><i class="sp"></i><span>отзыву можно доверять</span></span>
+                            </div>
+                            <div>
+                                <i class="starbar sp"><i class="starbar_w5 sp"></i></i>
+                                <span class="gray">отличная модель</span>
+                            </div>
+                            <div>
+                                <p><span class="bold">Достоинства: </span>Все просто супер, и пульт с кнопочками!
+                                </p>
+
+                                <p><span class="bold">Недостатки: </span>Их просто не может быть, телек - идеален
+                                </p>
+
+                                <p><span class="bold">Комментарии: </span>Сломался через день, купил такой же, о
+                                    своем выборе не жалею!!</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </li>
+        <li data-tab-id="windowTab4" class="tab-content"></li>
     </ul>
 </div>
 <div class="flt-l analog-window">
@@ -502,7 +709,7 @@
         <li class="catalog__item">
             <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
             <a href="" class="catalog__item__name underline-link blue">Телевизор Samsung
-                UE40F6400</a>
+                UE40F6400 asdfkjasdf asdf;lksadjf dfdfdfdfdfdfdfdfdfdfdfdf</a>
 
             <div class="clearfix rate rate-small">
                 <i class="sp smile-small"></i>
@@ -541,141 +748,183 @@
     </ul>
 </div>
 <footer class="footer rel pre-top-shadow">
-    <i class="sp close"></i>
-    <ul style="text-align: center; margin-bottom: 40px;">
-        <li class="footer-tabs selected"><a href="javascript:void(0)"><i
+    <a href="javascript:void(0)" class="close-l"><i class="sp close"></i></a>
+    <ul class="footer-header footer-tabs tab-menu">
+        <li id="tabId1" class="footer-tab"><a href="javascript:void(0)"><i
                 class="sp recent"></i><span class="link dotted-link">Недавно просмотренные</span></a></li>
-        <li class="footer-tabs"><a href="javascript:void(0)"><i
+        <li id="tabId2" class="footer-tab"><a href="javascript:void(0)"><i
                 class="sp analog"></i><span class="link dotted-link">Похожие модели</span></a></li>
     </ul>
-    <div class="horiz-scroll-line model-scroll">
-        <div class="horiz-scroll-tabs">
-            <ul class="horiz-scroll-catalog list-none">
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+    <ul class="footer-body footer-tabs-content tabs-content">
+        <li data-tab-id="tabId1" class="tab-content">
+            <div class="horiz-scroll-line model-scroll">
+                <div class="horiz-scroll-tabs">
+                    <ul class="horiz-scroll-catalog list-none">
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400 asdfkjasdf asdf;lksadjf dfdfdfdfdfdfdfdfdfdfdfdf</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 61 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 61 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="horiz-arrow arrow-forward sp"></a>
+                <a href="javascript:void(0)" class="horiz-arrow arrow-back sp"></a>
+            </div>
+        </li>
+        <li data-tab-id="tabId2" class="tab-content">
+            <div class="horiz-scroll-line model-scroll">
+                <div class="horiz-scroll-tabs">
+                    <ul class="horiz-scroll-catalog list-none">
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 61 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder pres"></i><span>В наличии</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-                <li class="catalog__item">
-                    <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
-                    <a href="" class="catalog__item__name blue">Телевизор Samsung
-                        UE40F6400</a>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
 
-                    <div class="clearfix rate-gray">
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <i class="sp smile-gray"></i>
-                        <span> &#8211; 21 покупатель</span>
-                    </div>
-                    <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
-                    <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
-                </li>
-            </ul>
-        </div>
-        <a href="javascript:void(0)" class="horiz-arrow arrow-forward sp"></a>
-        <a href="javascript:void(0)" class="horiz-arrow arrow-back sp"></a>
-    </div>
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
+
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
+
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                        <li class="catalog__item">
+                            <img src="src/tv_0008_i-копия-7.png" alt="" class="catalog__item__photo">
+                            <a href="" class="catalog__item__name blue">Телевизор Samsung
+                                UE40F6400</a>
+
+                            <div class="clearfix rate-gray">
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <i class="sp smile-gray"></i>
+                                <span> &#8211; 21 покупатель</span>
+                            </div>
+                            <div class="clearfix"><i class="vborder order"></i><span>Под заказ</span></div>
+                            <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="horiz-arrow arrow-forward sp"></a>
+                <a href="javascript:void(0)" class="horiz-arrow arrow-back sp"></a>
+            </div>
+        </li>
+    </ul>
 </footer>
 </div>
 </div>
 <div id="picture-popup" class="popup-out" style="display: none">
     <div class="popup picture-popup">
         <a href="javascript:void(0)" class="popup-close"><i></i></a>
+
         <div class="title-big"></div>
         <div class="content clearfix">
             <div class="content-left">
