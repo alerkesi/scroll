@@ -2188,30 +2188,24 @@ hr.dashed-line {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     overflow: visible;
+}
+.picture-popup .js-mainPic.isZoomable {
     cursor: url('../images/zoom_increase.png'), auto;
 }
+
 .picture-popup .js-mainPic.zoomed {
     max-height: none;
     max-width: none;
-    /*left: 50%;*/
-    /*top: 50%;*/
-    /*transform: translate(-50%, -50%);*/
-    /*-webkit-transform: translate(-50%, -50%);*/
-    /*-moz-transform: translate(-50%, -50%);*/
-    cursor: url('../images/zoom_reduce.png'), auto;
+    cursor: url('../images/zoom_reduce.png'), auto!important;
 }
-/*.picture-popup .content-zoom:after, .picture-popup .content-zoom:before {*/
-    /*width: 104px;*/
-    /*height: 104px;*/
-    /*background: url('../images/sprite.png') -248px -107px;*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*margin: auto;*/
-    /*left: 0;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*right: 0;*/
-/*}*/
+
+.picture-popup .js-mainPic.zoomed.zoom-h {
+    left: 45%;
+
+}
+.picture-popup .js-mainPic.zoomed.zoom-v {
+    top: 45%;
+}
 
 .picture-popup .lupe {
     width: 104px;

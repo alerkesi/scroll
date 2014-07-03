@@ -18,7 +18,7 @@ $(document).ready(function () {
 
         var $picsList = $('#pictures-content .vert-scroll').clone();
         var $mainPic = $('#pictures-content .js-mainPic').clone();
-        $cTitle.text(itemName);
+        //$cTitle.text(itemName);
         $cLeft.append($picsList);
         $cZoom.append($mainPic);
         $popup.on('hide', function () {
@@ -28,58 +28,100 @@ $(document).ready(function () {
             $cZoom.empty();
         });
         setMouseenterOnLittlePic(document.getElementById('picture-popup'));
-        $cZoom.find('.js-mainPic').click(function () {
+        checkZoomable();
+        setDragArea();
+        $(window).resize(function () {
+            checkZoomable();
+            setDragArea();
+            resetZoomed();
+            $cZoom.unbind();
+            $(self).css({
+                transform: 'translate(-50%, -50%)',
+                left: '50%',
+                top: '50%'
+            })
+        });
+        $mainPic.on('change-src', function () {
+            checkZoomable();
+        });
+        $cZoom.find('.js-mainPic.isZoomable').click(function () {
             var self = this;
             if ($(self).hasClass('zoomed')) {
-                $cZoom.removeClass('zoomed');
-                $(self).removeClass('zoomed');
-                $cZoom.unbind();
-                $(self).css({
-                    transform: 'translate(-50%, -50%)'
-                })
+                resetZoomed();
             } else {
-                $cZoom.addClass('zoomed');
                 $(self).addClass('zoomed');
                 $cZoom.mousemove(function (event) {
-                    var dragArea = {
-                        height: $cZoom[0].clientHeight,
-                        width: $cZoom[0].clientWidth,
-                        posX: getOffsetRect($cZoom[0]).left,
-                        posY: getOffsetRect($cZoom[0]).top,
-                        curPosX: event.pageX - $cZoom[0].posX,
-                        curPosY: event.pageY - $cZoom[0].posY
-                    };
-                    var xPerc = -(event.pageX - dragArea.posX) / dragArea.width * 100 + '%',
-                        yPerc = -(event.pageY - dragArea.posY) / dragArea.height * 100 + '%';
-                    $(self).css({
-                        transform: 'translate(' + xPerc + ',' + yPerc + ')'
-                    })
+                    var xPerc = -(event.pageX - $cZoom.dragArea.posX) / $cZoom.dragArea.width * 100,
+                        yPerc = -(event.pageY - $cZoom.dragArea.posY) / $cZoom.dragArea.height * 100;
+                    if ($(self).hasClass('zoom-v') && $(self).hasClass('zoom-h')) {
+                        $(self).css({
+                            transform: 'translate(' + xPerc + '%,' + yPerc + '%)'
+                        });
+                    } else if ($(self).hasClass('zoom-h')) {
+                        $(self).css({
+                            transform: 'translate(' + xPerc + '%,-50%)'
+                        });
+                    } else if ($(self).hasClass('zoom-v')) {
+                        $(self).css({
+                            transform: 'translate(-50%, ' + yPerc + '%)'
+
+                        });
+                    }
                 })
             }
-            function getOffsetRect(elem) {
-                // (1)
-                var box = elem.getBoundingClientRect()
-
-                // (2)
-                var body = document.body
-                var docElem = document.documentElement
-
-                // (3)
-                var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop
-                var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft
-
-                // (4)
-                var clientTop = docElem.clientTop || body.clientTop || 0
-                var clientLeft = docElem.clientLeft || body.clientLeft || 0
-
-                // (5)
-                var top = box.top + scrollTop - clientTop
-                var left = box.left + scrollLeft - clientLeft
-
-                return { top: Math.round(top), left: Math.round(left) }
-            }
-
         });
+        function resetZoomed(){
+            $('.js-mainPic.isZoomable').removeClass('zoomed');
+            $cZoom.unbind();
+            $('.js-mainPic.isZoomable').css({
+                transform: 'translate(-50%, -50%)',
+                left: '50%',
+                top: '50%'
+            })
+        }
+        function checkZoomable(){
+            var mainPic = $mainPic[0];
+            $mainPic.wK = mainPic.naturalWidth / $cZoom.width() || 1;
+            $mainPic.hK = mainPic.naturalHeight / $cZoom.height() || 1;
+            $mainPic.toggleClass('zoom-v', mainPic.naturalHeight > $cZoom.height());
+            $mainPic.toggleClass('zoom-h', mainPic.naturalWidth > $cZoom.width());
+            if (mainPic.naturalHeight > $cZoom.height() || mainPic.naturalWidth > $cZoom.width()) {
+                $mainPic.addClass('isZoomable');
+            } else $mainPic.removeClass('isZoomable')
+        }
+        function setDragArea(){
+            $cZoom.dragArea = {
+                height: $cZoom.height(),
+                width: $cZoom.width(),
+                posX: getOffsetRect($cZoom[0]).left,
+                posY: getOffsetRect($cZoom[0]).top,
+                curPosX: event.pageX - $cZoom[0].posX,
+                curPosY: event.pageY - $cZoom[0].posY
+            };
+        }
+        function getOffsetRect(elem) {
+            // (1)
+            var box = elem.getBoundingClientRect();
+
+            // (2)
+            var body = document.body;
+            var docElem = document.documentElement;
+
+            // (3)
+            var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
+            var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft;
+
+            // (4)
+            var clientTop = docElem.clientTop || body.clientTop || 0;
+            var clientLeft = docElem.clientLeft || body.clientLeft || 0;
+
+            // (5)
+            var top = box.top + scrollTop - clientTop;
+            var left = box.left + scrollLeft - clientLeft;
+
+            return { top: Math.round(top), left: Math.round(left) }
+        }
+
 
 
     });
@@ -121,12 +163,12 @@ $(document).ready(function () {
     /* ------ */
     setMouseenterOnLittlePic(document.getElementById('pictures-content'));
     var $footBody = $('footer.footer').find('.footer-body');
-    $('footer.footer').on('click', '.close', function(){
+    $('footer.footer').on('click', '.close',function () {
         $footBody.slideUp(400);
-    }).on('click', '.footer-tab', function(){
+    }).on('click', '.footer-tab', function () {
             $footBody.slideDown(400);
         });
-    $('.catalog__item__name').text(function(){
+    $('.catalog__item__name').text(function () {
         return this.text.ellipsis(50);
     });
     toggleTab();
@@ -153,6 +195,7 @@ var setMouseenterOnLittlePic = function (container) {
         $(el).addClass('selected');
         oldSrc = $(el).find('img').attr('src');
         $mainPic.attr('src', oldSrc);
+        $($mainPic).trigger('change-src');
     };
 
     $littleImages.mouseenter(function (e) {
@@ -169,14 +212,14 @@ var setMouseenterOnLittlePic = function (container) {
 String.prototype.ellipsis = function (maxLength) {
     return this.length > maxLength ? this.substr(0, maxLength - 3) + '...' : this;
 };
-var toggleTab = function() {
-    $('.tab-menu li').click(function(){
+var toggleTab = function () {
+    $('.tab-menu li').click(function () {
         var clMenu = $(this).closest('.tab-menu'),
             clContent = clMenu.next('.tabs-content');
         clMenu.children('li').removeClass('selected');
         clContent.children('li').removeClass('selected');
         $(this).addClass('selected');
-        var targetTabContent = clContent.children("[data-tab-id$='"+this.id+"']");
+        var targetTabContent = clContent.children("[data-tab-id$='" + this.id + "']");
         targetTabContent.addClass('selected');
 
     })
@@ -192,9 +235,7 @@ horizScrolls.on('.arrow-forward', 'click', function () {
     left();
 });
 
-//var bdc = document.getElementsByClassName('basket__desktop__catalog')[0];
-
-horizScrolls.each(function(index, self){
+horizScrolls.each(function (index, self) {
     self.catalog = $(self).find('.horiz-scroll-catalog');
     self.tabs = $(self).find('.catalog__item');
     self.delta = self.tabs.outerWidth(true);
