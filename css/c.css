@@ -761,6 +761,16 @@ input[type="checkbox"]:checked:disabled + i {
     border: 1px solid gold;
 }
 
+/* Scrolls */
+.scroll-tabs {
+    position: relative;
+}
+.scroll-catalog {
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
 .vert-scroll-line {
     padding: 30px 0;
 }
@@ -768,6 +778,7 @@ input[type="checkbox"]:checked:disabled + i {
 .vert-scroll-tabs {
     overflow: hidden;
     height: 350px;
+    width: 60px;
 }
 
 .vert-arrow {
@@ -780,23 +791,25 @@ input[type="checkbox"]:checked:disabled + i {
     -moz-transform: translate(-50%, 0%);
 }
 
-.vert-arrow.arrow-forward {
+.vert-arrow.arrow-back {
     background-position: -14px -447px;
     top: 15px;
 }
 
-.vert-arrow.arrow-forward:hover {
+.vert-arrow.arrow-back:hover {
     background-position: 0 -447px;
 }
 
-.vert-arrow.arrow-back {
+.vert-arrow.arrow-forward {
     background-position: -14px -456px;
     bottom: 15px;
 }
 
-.vert-arrow.arrow-back:hover {
+.vert-arrow.arrow-forward:hover {
     background-position: 0 -456px;
 }
+
+/* *********** */
 
 /************* item card attributes *************/
 
