@@ -8,6 +8,10 @@ if ($.fn.hasOwnProperty('hide')) {
 }
 $(document).ready(function () {
     /* popup modules */
+    $('.otzyv-textarea').click(function () {
+        $('#otzyv-popup').show();
+    });
+
     var itemName = $('.js-item-name').text();
     $('.js-showPicturePopup').click(function () {
         var $popup = $('#picture-popup');
@@ -18,7 +22,7 @@ $(document).ready(function () {
 
         var $picsList = $('#pictures-content .vert-scroll-line').clone();
         var $mainPic = $('#pictures-content .js-mainPic').clone();
-        //$cTitle.text(itemName);
+        $cTitle.text(itemName);
         $cLeft.append($picsList);
         $cZoom.append($mainPic);
         $popup.on('hide', function () {
@@ -228,30 +232,6 @@ var toggleTab = function () {
 };
 
 /* Catalog scroller */
-
-//horizScrolls.each(function (index, self) {
-//    self.catalog = $(self).find('.horiz-scroll-catalog');
-//    self.tabs = $(self).find('.catalog__item');
-//    self.delta = self.tabs.outerWidth(true);
-//    self.tabsWidth = self.tabs.length * self.delta;
-//    self.tabMenu = parseInt($(self).find('.horiz-scroll-tabs').width() / self.delta) * self.delta;
-//    if (self.addEventListener) {
-//        if ('onwheel' in document) {
-//            // IE9+, FF17+
-//            self.addEventListener("wheel", bindScroll, false);
-//        } else if ('onmousewheel' in document) {
-//            // ���������� ������� �������
-//            self.addEventListener("mousewheel", bindScroll, false);
-//        } else {
-//            // 3.5 <= Firefox < 17, ����� ������ ������� DOMMouseScroll ���������
-//            self.addEventListener("MozMousePixelScroll", bindScroll, false);
-//        }
-//    } else { // IE<9
-//        self.attachEvent("onmousewheel", bindScroll);
-//    }
-//});
-
-
 function bindScroll(e) {
     e.preventDefault();
     if ($(this.catalog).is(':animated')) {

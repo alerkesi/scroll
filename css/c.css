@@ -2226,3 +2226,130 @@ hr.dashed-line {
     background-position: -248px -107px;
 }
 /* ------- */
+
+/* Form style */
+.basket__form {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    color: #333333;
+}
+
+.form-title, .title {
+    font-size: 24px;
+}
+
+.form-row {
+    padding-left: 220px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-label ~ span {
+    line-height: 28px;
+}
+
+.form-label {
+    line-height: 28px;
+    height: 28px;
+    position: absolute;
+    left: 0;
+}
+
+.form-label.radio-label {
+    line-height: 38px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-input, .form-select {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    height: 28px;
+    border: 1px solid #999999;
+    vertical-align: middle;
+}
+
+.form-input[type="text"], .form-input[type="tel"], .form-select {
+    padding-left: 8px;
+}
+
+.form-select {
+    width: 180px;
+}
+
+.form-select::-ms-expand {
+    background: url("../images/big_basket_sprite.png") -380px -202px;
+    width: 14px;
+    height: 9px;
+    border: 0 none;
+}
+
+.form-select.long-select {
+    width: 240px;
+}
+
+.form-select.short-select {
+    width: 140px;
+}
+
+.form-input {
+    width: 320px;
+}
+
+.input__option:not(:first-child) {
+    margin-top: 7px;
+}
+
+.form-input.short-input {
+    width: 180px;
+    margin-right: 10px;
+}
+
+.form-input.long-input {
+    width: 530px;
+}
+
+textarea.form-input {
+    padding: 5px 10px;
+    height: 100px;
+    resize: vertical;
+}
+
+.form-input[type="number"] {
+    height: 24px;
+    margin: 0 3px;
+    width: 35px;
+    outline: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #999999;
+    text-align: center;
+}
+
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-input:focus, .form-select:focus {
+    border: 1px solid #efb700;
+    outline: none;
+}
+
+.form-input.alert {
+    border: 1px solid #fc0000 !important;
+}
+
+.ast {
+    color: #efb700;
+}

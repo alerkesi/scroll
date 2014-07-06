@@ -411,7 +411,7 @@
                     </li>
                 </ul>
                 <label style="display: block; margin-top: 15px;" class="clearfix rel">
-                    <textarea class="otzyv-textarea" placeholder="Напишите свой отзыв об этом товаре..."></textarea>
+                    <textarea readonly class="otzyv-textarea" placeholder="Напишите свой отзыв об этом товаре..."></textarea>
                 </label>
 
                 <div>
@@ -934,7 +934,44 @@
         </div>
     </div>
 </div>
-
+<div id="otzyv-popup" class="popup-out" style="display: none">
+    <div class="popup otzyv-popup">
+        <a href="javascript:void(0)" class="popup-close"><i></i></a>
+        <div class="title-big">Напишите свой отзыв об этом товаре<i class="sp"></i></div>
+        <div>Вы можете совершенно искренне написать свое отношение к данному товару, все плюсы и минусы покупки.</div>
+        <div class="content clearfix">
+            <form class="basket__form" action="">
+                <div class="form-row">
+                    <label class="form-label">Имя<span class="ast">*</span></label>
+                    <input required type="text" class="form-input" placeholder="Константин">
+                    <span class="vam alert hidden"><i></i><span>Вы забыли указать Ваше имя</span></span>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">Оценка</label>
+                    <div class="starbar"><div class="starbar_w1"></div></div>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">Достоинства</label>
+                    <textarea class="form-input" placeholder=""></textarea>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">Недостатки</label>
+                    <textarea class="form-input" placeholder=""></textarea>
+                </div>
+                <div>
+                    <label>Если вы совершали покупку у нас, пожалуйста, укажите номер заказа
+                        <input type="text" placeholder="000000"/></label>
+                    <textarea class="form-input" placeholder=""></textarea>
+                </div>
+                <div class="form-footer clearfix">
+                    <div class="flt-r confirm-area">
+                        <a href="javascript:void(0)"><i class="big-button-complete"></i></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </div>
 </div>
 
