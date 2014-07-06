@@ -258,6 +258,13 @@ a {
     background-position: -13px -110px;
 }
 
+.rupor {
+    background-position: -842px -84px;
+    width: 35px;
+    height: 33px;
+    margin-left: 5px;
+}
+
 .dash-display {
     background-position: -40px -130px;
     width: 20px;
@@ -313,7 +320,22 @@ a {
     background-position: 0 -195px;
     display: inline-block;
 }
-
+.starbar-big {
+    position: relative;
+    width: 145px;
+    height: 28px;
+    background-position: -220px -210px;
+    display: inline-block;
+    cursor: pointer;
+}
+.starbar-big_w1, .starbar-big_w2, .starbar-big_w3, .starbar-big_w4, .starbar-big_w5 {
+    width: 29px;
+    height: 28px;
+    background-position: -220px -181px;
+}
+.starbar-big_w2, .starbar-big_w3, .starbar-big_w4, .starbar-big_w5 {
+    width: 58px;
+}
 .starbar_w1, .starbar_w2, .starbar_w3, .starbar_w4, .starbar_w5 {
     width: 15px;
     height: 14px;
@@ -971,6 +993,17 @@ i.sp.radio.selected {
     width: 140px;
     height: 40px;
     background-position: 0px -620px;
+}
+.button-publish .sp {
+    width: 182px;
+    height: 40px;
+    background-position: -420px -620px;
+}
+.button-publish:hover .sp {
+    background-position: -420px -660px;
+}
+.button-publish:active .sp {
+    background-position: -420px -700px;
 }
 
 .buy-btn:hover i.sp {
@@ -1740,6 +1773,15 @@ hr.dashed-line {
 .otzyv-textarea:focus {
     outline: none;
 }
+.popup .otzyv-popup {
+    width: 750px;
+}
+.otzyv-popup .form-row {
+    padding-left: 140px;
+}
+.otzyv-popup .form-input {
+    width: 100%;
+}
 
 .social {
     margin-bottom: 15px;
@@ -2229,10 +2271,11 @@ hr.dashed-line {
 
 /* Form style */
 .basket__form {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 10px;
     background-color: #fff;
     color: #333333;
+    font-size: 16px;
 }
 
 .form-title, .title {
@@ -2242,6 +2285,13 @@ hr.dashed-line {
 .form-row {
     padding-left: 220px;
     position: relative;
+}
+.form-row:not(:first-child){
+    margin-top: 20px;
+
+}
+
+.form-footer {
     margin-top: 20px;
 }
 
@@ -2275,6 +2325,9 @@ hr.dashed-line {
     height: 28px;
     border: 1px solid #999999;
     vertical-align: middle;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .form-input[type="text"], .form-input[type="tel"], .form-select {
