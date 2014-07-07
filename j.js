@@ -1,12 +1,12 @@
 $(document).ready(function () {
     /* extend */
-    if ($.fn.hasOwnProperty('hide')) {
-        var _oldhide = $.fn.hide;
-        $.fn.hide = function (speed, callback) {
-            $(this).trigger('hide');
-            return _oldhide.apply(this, arguments);
-        }
-    }
+//    if ($.fn.hasOwnProperty('hide')) {
+//        var _oldhide = $.fn.hide;
+//        $.fn.hide = function (speed, callback) {
+//            $(this).trigger('hide');
+//            return _oldhide.apply(this, arguments);
+//        }
+//    }
     /* popup modules */
     $('.otzyv-textarea').click(function () {
         $('#otzyv-popup').show();
@@ -25,8 +25,7 @@ $(document).ready(function () {
         $cTitle.text(itemName);
         $cLeft.append($picsList);
         $cZoom.append($mainPic);
-        $popup.on('hide', function () {
-
+        $popup.find('.popup-close').click(function () {
             $cLeft.empty();
             $cTitle.text('');
             $cZoom.empty();
@@ -34,6 +33,8 @@ $(document).ready(function () {
         setMouseenterOnLittlePic(document.getElementById('picture-popup'));
         checkZoomable();
         setDragArea();
+        createScroll($picsList[0]);
+
         $(window).resize(function () {
             checkZoomable();
             setDragArea();
@@ -100,9 +101,7 @@ $(document).ready(function () {
                 height: $cZoom.height(),
                 width: $cZoom.width(),
                 posX: getOffsetRect($cZoom[0]).left,
-                posY: getOffsetRect($cZoom[0]).top,
-                curPosX: event.pageX - $cZoom[0].posX,
-                curPosY: event.pageY - $cZoom[0].posY
+                posY: getOffsetRect($cZoom[0]).top
             };
         }
 
@@ -112,17 +111,20 @@ $(document).ready(function () {
         var $popup = $('#all-br-items');
         openPopup($popup);
     });
-    $('.starbar-big').mousemove(function (e) {
+    $('.starbar-big')
+        .mousemove(function (e) {
         var x = e.pageX - getOffsetRect(e.target).left;
         $(this).children('div').width(x);
-    })
-        .hover(function (e) {
-            this.oldW = $(this).children('div').width();
-        }, function (e) {
+        })
+        .mouseleave(function (e) {
             $(this).children('div').width(this.oldW);
         })
+        .mouseenter(function (e) {
+            this.oldW = $(this).children('div').width();
+        })
         .click(function (e) {
-            this.oldW = $(this).children('div').width(this.oldW);
+            var x = e.pageX - getOffsetRect(e.target).left;
+            this.oldW = $(this).children('div').width(x);
         });
     /* Calculate coords of relative element */
     function getOffsetRect(elem) {
@@ -188,14 +190,19 @@ $(document).ready(function () {
     var $footer = $('footer.footer');
     $footer.closeX = $footer.find('.close');
     $footer.footBody = $footer.find('.footer-body');
+    $footer.tabs = $footer.find('.footer-tab');
     $footer.closeX.on('click', function () {
         $footer.footBody.slideUp(400);
         $footer.closeX.hide();
+        $footer.tabs.removeClass('selected');
     });
-    $footer.on('click', '.footer-tab', function () {
-            $footer.footBody.slideDown(400);
-            $footer.closeX.show();
-        });
+    $footer.tabs.on('click', function () {
+        $footer.footBody.slideDown(400);
+        $footer.closeX.show();
+        scrolls.each(function (i, s) {
+            createScroll(s);
+        })
+    });
     $('.catalog__item__name').text(function () {
         return this.text.ellipsis(50);
     });
@@ -240,6 +247,10 @@ var setMouseenterOnLittlePic = function (container) {
 String.prototype.ellipsis = function (maxLength) {
     return this.length > maxLength ? this.substr(0, maxLength - 3) + '...' : this;
 };
+function openOtzyvTab() {
+    $('#windowTab3').click();
+};
+
 var bindToggleTab = function () {
     $('.tab-menu li').click(function () {
         var clMenu = $(this).closest('.tab-menu'),
@@ -303,6 +314,9 @@ var checkSwitch = function (th) {
 };
 var scrolls = $('.scroll-line');
 scrolls.each(function (i, self) {
+    createScroll(self);
+});
+function createScroll(self) {
     self.horizontal = $(self).hasClass('horiz-scroll-line');
     self.vertical = !$(self).hasClass('horiz-scroll-line');
     self.tabs = $(self).find('.scroll-tabs');
@@ -313,7 +327,19 @@ scrolls.each(function (i, self) {
     self.areaSizePx = self.horizontal ? self.tabs.width() : self.tabs.height();
     self.arrowForward = $(self).find('.arrow-forward');
     self.arrowBack = $(self).find('.arrow-back');
-
+    self.kulisa = $(self).find('.catalog__kulisa');
+    self.kulisa.css({
+        width: (1 - (parseInt(self.areaSizePx / self.delta) + 1 - self.areaSizePx / self.delta)) * self.delta,
+        left: parseInt(self.areaSizePx / self.delta) * self.delta
+    });
+    $(window).resize(function () {
+        self.areaSizePx = self.horizontal ? self.tabs.width() : self.tabs.height();
+        checkSwitch(self);
+        self.kulisa.css({
+            width: (1 - (parseInt(self.areaSizePx / self.delta) + 1 - self.areaSizePx / self.delta)) * self.delta,
+            left: parseInt(self.areaSizePx / self.delta) * self.delta
+        });
+    });
     self.forwardPossible = function () {
         return self.catalogSizePx + parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top'))) - self.areaSizePx > 0;
     };
@@ -346,5 +372,5 @@ scrolls.each(function (i, self) {
             forward(self);
         }
     });
-});
+}
 /* End Catalog scroller */

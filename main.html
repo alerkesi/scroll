@@ -98,14 +98,13 @@
                     <a class="link dotted-link gold-underline" href="javascript:void(0)">В кредит за
                         <span class="bold">9 455 &#8399;</span></a>
                 </div>
-                <div class="counter">
+                <div class="counter clearfix">
                     <a href="javascript:void(0)" class="deduct disabled"><i class="sp"></i></a>
                     <input value="1">
                     <a href="javascript:void(0)" class="add"><i class="sp"></i></a>
-                    <span>шт.</span>
                 </div>
                 <a href="javascript:void(0)" class="buy-btn"><i class="sp"></i></a>
-                <button class="button button-gold">Купить в 1 клик</button>
+                <button class="button button-white-gold">Купить в 1 клик</button>
             </div>
             <div class="item-tile flt-l">
                 <div>
@@ -133,11 +132,11 @@
                 <div>
                     <label class="for-checkbox">
                         <input type="checkbox" name="checkbox" hidden/>
-                        <i class="sp"></i><span>Проверить на битые пиксели 690 </span>
+                        <i class="sp"></i><span>Проверить на битые пиксели </span><span class="bold">690 &#8399;</span>
                     </label>
                     <label class="for-checkbox">
                         <input type="checkbox" name="checkbox" hidden/>
-                        <i class="sp"></i><span>Подключение Smart TV 500 </span>
+                        <i class="sp"></i><span>Подключение Smart TV <span class="bold">500 &#8399;</span></span>
                         <i class="sp qst hint--top" data-hint="Smart TV"></i>
                     </label>
                 </div>
@@ -156,9 +155,9 @@
             <div class="flt-l col-1-2">
                 <a href="javascript:void(0)" class="otzyv flt-l">
                     <i class="starbar sp"><i class="starbar_w4 sp"></i></i>
-                            <span class="link dotted-link" style="vertical-align: middle"><span
+                            <a href="javascript:openOtzyvTab();" class="link dotted-link" style="vertical-align: middle; margin-left: 5px;"><span
                                     class="gray">Отзывы </span><span
-                                    class="black">24</span></span>
+                                    class="black">24</span></a>
                 </a>
                 <a class="drell rel" href="javascript:void(0)"><i class=""
                                                                   style="background-image: url('src/tv_0004_Векторный-смарт-объект.png')"></i></a>
@@ -166,7 +165,7 @@
             <div class="flt-l col-1-2">
                 <a class="present-link flt-r" href="javascript:void(0)">
                     <i class="sp present"></i>
-                    <span class="link dotted-link gray red-hover" style="vertical-align: middle">Хочу в подарок</span><i
+                    <span href="javascript:void(0)" class="link dotted-link gray red-hover" style="vertical-align: middle; margin-left: 5px;">Хочу в подарок</span><i
                         class="sp popup-link popup-link-red"></i>
                 </a>
                 <a class="present-to-buy rel" href="javascript:void(0)"><i class=""
@@ -277,7 +276,7 @@
         <a class="link dotted-link" href="javascript:void(0)">Отзывы<span
                 class="black"> 24</span></a></li>
     <li id="windowTab4">
-        <a class="link dotted-link" href="javascript:void(0)">Аксессуары<span
+        <a class="link dotted-link accessoires-link" href="javascript:void(0)">Аксессуары<span
                 class="black"> 144</span></a>
         <i class="sp popup-link popup-link-black"></i></li>
 </ul>
@@ -372,8 +371,7 @@
             <div class="article-title bold">Отзывы покупателей</div>
             <hr class="solid-line"/>
             <ul>
-                <li>
-                    <div>
+                <li class="otzyv-block">
                         <div class="user">
                             <img class="user-ava sp" src="" alt=""/>
                             <span class="user-name flt-l">Ксения Булгакова</span>
@@ -401,10 +399,8 @@
                                 Многофункциональный телек. Поставила бы пять если бы не выше описанные глюки,
                                 которые как я поняла из отзывов не редкость...</p>
                         </div>
-                    </div>
                 </li>
-                <li>
-                    <div>
+                <li class="otzyv-block">
                         <div class="user">
                             <img class="user-ava sp" src="" alt=""/>
                             <span class="user-name flt-l">Стрыкало</span>
@@ -424,7 +420,6 @@
                             <p><span class="bold">Комментарии: </span>Сломался через день, купил такой же, о
                                 своем выборе не жалею!!</p>
                         </div>
-                    </div>
                 </li>
             </ul>
             <label style="display: block; margin-top: 15px;" class="clearfix rel">
@@ -433,7 +428,7 @@
             </label>
 
             <div>
-                        <span>Посмотреть <a class="link dotted-link blue" href="javacript:void(0)">все отзывы
+                        <span>Посмотреть <a class="link dotted-link blue" href="javascript:openOtzyvTab();">все отзывы
                             (24)</a></span>
             </div>
         </li>
@@ -804,6 +799,7 @@
                         </li>
 
                     </ul>
+                    <div class="catalog__kulisa"></div>
                 </div>
                 <a href="javascript:void(0)" class="horiz-arrow arrow-forward sp"></a>
                 <a href="javascript:void(0)" class="horiz-arrow arrow-back sp"></a>
@@ -928,6 +924,7 @@
                             <div class="clearfix"><span class="bold catalog__item__price">47 990 ⃏</span></div>
                         </li>
                     </ul>
+                    <div class="catalog__kulisa"></div>
                 </div>
                 <a href="javascript:void(0)" class="horiz-arrow arrow-forward sp"></a>
                 <a href="javascript:void(0)" class="horiz-arrow arrow-back sp"></a>
@@ -1001,177 +998,597 @@
 
         <div class="title catalog-title">Подберите себе крутой аксессуар<i class="sp"></i></div>
         <div class="terms catalog-terms">Он точно не будет лишним и продлит жизнь вашей технике</div>
-        <ul class="list-none clearfix">
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
+        <ul class="menu flt-r tab-menu">
+            <li id="catalog-popup-w1" class="selected"><a class="link dotted-link gold-underline" href="javascript:void(0)">Крепежи настенные</a></li><br>
+            <li id="catalog-popup-w2"><a class="link dotted-link gold-underline" href="javascript:void(0)">ТВ приставки</a></li><br>
+            <li id="catalog-popup-w3"><a class="link dotted-link gold-underline" href="javascript:void(0)">Blue-Ray плееры</a></li><br>
+            <li id="catalog-popup-w4"><a class="link dotted-link gold-underline" href="javascript:void(0)">Гвозди жидкокристаллические</a></li><br>
+        </ul>
 
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
+        <ul class="tabs-content">
+            <li data-tab-id="catalog-popup-w1" class="tab-content selected">
+                <ul class="flt-l list-none clearfix catalog-list">
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
 
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
+            <li data-tab-id="catalog-popup-w2" class="tab-content">
+                <ul class="flt-l list-none clearfix catalog-list">
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
 
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
 
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
+            <li data-tab-id="catalog-popup-w3" class="tab-content">
+                <ul class="flt-l list-none clearfix catalog-list">
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
 
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
 
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
+            <li data-tab-id="catalog-popup-w4" class="tab-content">
+                <ul class="flt-l list-none clearfix catalog-list">
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
 
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
 
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog-item flt-l clearfix">
+                        <div class="flt-l catalog-item__left">
+                            <img class="" src="src/ac_1_1.jpg" alt=""/>
+
+                            <div class="starbar">
+                                <div class="starbar_w4"></div>
+                            </div>
+                        </div>
+                        <div class="flt-l catalog-item__right" style="text-align: left;">
+                            <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
+                                SGP10093 Neo Hybrid EX
+                                Slim Vivid</a>
+
+                            <div class="bottom">
+                                <div class="product__item__art">Артикул: 674739 (с2)</div>
+                                <div class="presence presence__yes">Есть в наличии</div>
+                                <div class="new-price js-product-total-price">29 999 &#8399;</div>
+                                <button class="button button-gold" style="margin-left: 0;">Добавить</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
-
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
-
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
-
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
-
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
-
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
-
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog-item flt-l clearfix">
-                <div class="flt-l catalog-item__left">
-                    <img class="" src="src/ac_1_1.jpg" alt=""/>
-
-                    <div class="starbar">
-                        <div class="starbar_w4"></div>
-                    </div>
-                </div>
-                <div class="flt-l catalog-item__right" style="text-align: left;">
-                    <a href="javascript:void(0)" class="catalog-item__name underline-link blue">Бампер для iPhone 5
-                        SGP10093 Neo Hybrid EX
-                        Slim Vivid</a>
-
-                    <div class="bottom">
-                        <div class="product__item__art">Артикул: 674739 (с2)</div>
-                        <div class="presence presence__yes">Есть в наличии</div>
-                        <div class="new-price js-product-total-price">29 999 &#8399;</div>
-                        <button class="button button-gold" style="margin-left: 0;">Добавить</button>
-                    </div>
-                </div>
-            </li>
-
-
         </ul>
     </div>
 </div>
