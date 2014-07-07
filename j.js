@@ -108,7 +108,10 @@ $(document).ready(function () {
 
 
   });
-
+  $('.accessoires-link').click(function () {
+    var $popup = $('#all-br-items');
+    openPopup($popup);
+  });
   $('.starbar-big').mousemove(function (e) {
     var x = e.pageX - getOffsetRect(e.target).left;
     $(this).children('div').width(x);

@@ -76,10 +76,10 @@ a {
     -moz-box-sizing: border-box;
 }
 
-.sp, .sale-sticker:after {
-    background-image: url("../images/sprite.png");
+.sp, .popup-close i, .sale-sticker:after, .starbar, .starbar_w1, .starbar_w2, .starbar_w3, .starbar_w4, .starbar_w5 {
     display: inline-block;
     vertical-align: middle;
+    background-image: url("../images/sprite.png");
 }
 
 .link {
@@ -2143,16 +2143,16 @@ hr.dashed-line {
     top: 16px;
     width: 16px;
     height: 16px;
-    background-position: -380px -330px;
+    background-position: 0 -584px;
     cursor: pointer;
 }
 
 .popup-close i:hover {
-    background-position: -396px -330px;
+    background-position: -16px -584px;
 }
 
 .popup-close i:active {
-    background-position: -412px -330px;
+    background-position: -32px -584px;
 }
 
 .noscroll {
@@ -2179,7 +2179,7 @@ hr.dashed-line {
 }
 
 .popup {
-    width: 702px;
+    width: 700px;
     position: absolute;
     overflow: auto;
     left: 50%;
@@ -2406,3 +2406,81 @@ textarea.form-input {
 .ast {
     color: #efb700;
 }
+/* Accessories popup */
+.catalog-popup {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.catalog-popup .catalog__item {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 16px;
+    height: 100%;
+    margin-left: 1px;
+    position: relative;
+    width: 313px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+.catalog-popup .catalog__item__photo {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.catalog-item {
+    width: 335px;
+    height: 170px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.catalog-item:nth-child(2n) {
+    margin-left: 10px;
+}
+.catalog-title i {
+    width: 24px;
+    height: 35px;
+    background-position: -808px -82px;
+    vertical-align: bottom;
+    margin-left: 10px;
+
+}
+.catalog-item__left {
+    width: 140px;
+    height: 100%;
+    margin-right: 10px;
+    position: relative;
+}
+
+.catalog-item__right {
+    width: 185px;
+    height: 100%;
+    position: relative;
+}
+
+.catalog-item__name {
+    font-size: 16px;
+    line-height: 22px;
+}
+.catalog-terms {
+    margin-bottom: 27px;
+    padding-left: 30px;
+}
+.catalog-title {
+    padding-left: 30px;
+}
+.catalog-item .starbar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    bottom: 5px;
+}
+
+/* **** */
