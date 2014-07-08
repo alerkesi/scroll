@@ -189,6 +189,9 @@ a {
     .add-scroll-line {
         width: 900px;
     }
+    .add-scroll-line .item-number:nth-child(6) {
+        left: 600px;
+    }
 }
 
 @media all and (max-width: 1179px) {
@@ -198,6 +201,9 @@ a {
 
     .add-scroll-line {
         width: 600px;
+    }
+    .add-scroll-line .item-number:nth-child(6) {
+        display: none;
     }
 }
 
@@ -2207,10 +2213,13 @@ hr.dashed-line {
     text-align: center;
 }
 
-.catalog__item .item-number {
+.add-scroll-line .item-number {
     position: absolute;
-    top: -12px;
+    top: 5px;
     left: 0;
+}
+.add-scroll-line .item-number:nth-child(5) {
+    left: 300px;
 }
 
 .lborder + .item-number {
@@ -2616,6 +2625,7 @@ textarea.form-input {
     position: absolute;
     display: block;
     height: 100%;
+    top:0;
     font-size: 0;
     background-color: rgba(255, 255, 255, 0);
     background-image: -webkit-linear-gradient(right, #fff, rgba(241, 241, 241, 0));
