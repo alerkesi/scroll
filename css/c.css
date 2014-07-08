@@ -1360,14 +1360,20 @@ li:hover .service-pic-7 {
     margin-left: .5em;
 }
 
-.otzyv, .present-link {
+.otzyv, div.present {
     font-size: 13px;
-    display: block;
     height: 20px;
     margin-bottom: 10px;
 }
-.otzyv {
-    margin-bottom: 7px;
+.otzyv .starbar {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.otzyv > a, div.present > a {
+    line-height: 20px;
+}
+div.present {
+    text-align: right;
 }
 
 .gray {
@@ -1393,14 +1399,6 @@ li:hover .service-pic-7 {
 
 }
 
-.drell {
-    padding-right: 10px;
-}
-
-.present-to-buy {
-    padding-left: 10px;
-}
-
 .drell i, .present-to-buy i {
     background: no-repeat center;
     max-width: 285px;
@@ -1410,7 +1408,7 @@ li:hover .service-pic-7 {
 
 }
 
-.present {
+i.present {
     background-position: -1010px -10px;
     width: 20px;
     height: 20px;
@@ -2191,6 +2189,7 @@ hr.dashed-line {
 .item-number {
     width: 24px;
     height: 24px;
+    font-size: 16px;
     line-height: 18px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -2424,6 +2423,7 @@ hr.dashed-line {
 
 .form-input[type="text"], .form-input[type="tel"], .form-select {
     padding-left: 8px;
+    line-height: 28px;
 }
 
 .form-select {

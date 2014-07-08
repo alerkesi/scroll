@@ -201,6 +201,9 @@ $(document).ready(function () {
     });
     (function bindToggleTab () {
         $('.tab-menu li').click(function () {
+            if (!this.id) {
+                return;
+            }
             var clMenu = $(this).closest('.tab-menu'),
                 clContent = clMenu.next('.tabs-content');
             clMenu.children('li').removeClass('selected');
@@ -221,6 +224,9 @@ String.prototype.ellipsis = function (maxLength) {
 };
 var openOtzyvTab = function () {
     $('#windowTab3').click();
+    $('html, body').animate({
+        scrollTop: $("#windowTab3").offset().top
+    }, 1000);
 };
 var setMouseenterOnLittlePic = function (container) {
 

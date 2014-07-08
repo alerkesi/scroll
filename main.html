@@ -158,24 +158,22 @@
             </p>
         </div>
         <div class="clearfix" style="margin-top: 20px;">
-            <div class="flt-l col-1-2">
-                <a href="javascript:void(0)" class="otzyv flt-l">
-                    <i class="starbar sp"><i class="starbar_w4 sp"></i></i>
-                            <a href="javascript:openOtzyvTab();" class="link dotted-link" style="vertical-align: middle; margin-left: 5px;"><span
-                                    class="gray">Отзывы </span><span
-                                    class="black">24</span></a>
-                </a>
-                <a class="drell rel" href="javascript:void(0)"><i class=""
-                                                                  style="background-image: url('src/tv_0004_Векторный-смарт-объект.png')"></i></a>
+            <div class="flt-l" style="width: 48%">
+                <div class="otzyv">
+                        <i class="starbar sp"><i class="starbar_w4 sp"></i></i>
+                        <a href="javascript:openOtzyvTab();" class="link dotted-link" style="margin-left: 5px;"><span
+                                class="gray">Отзывы </span><span
+                                class="black">24</span></a>
+                </div>
+                <a class="drell rel" href="javascript:void(0)"><i style="background-image: url('src/tv_0004_Векторный-смарт-объект.png')"></i></a>
             </div>
-            <div class="flt-l col-1-2">
-                <a class="present-link flt-r" href="javascript:void(0)">
+            <div class="flt-l" style="width: 48%; margin-left: 3%">
+                <div class="present">
                     <i class="sp present"></i>
-                    <span href="javascript:void(0)" class="link dotted-link gray red-hover" style="vertical-align: middle; margin-left: 5px;">Хочу в подарок</span><i
-                        class="sp popup-link popup-link-red"></i>
-                </a>
-                <a class="present-to-buy rel" href="javascript:void(0)"><i class=""
-                                                                           style="background-image: url('src/tv_0005_Подарок-к-покупке.png')"></i></a>
+                    <a href="javascript:void(0)" class="link dotted-link gray red-hover" style="margin-left: 5px;">Хочу в подарок<i
+                            class="sp popup-link popup-link-red"></i></a>
+                </div>
+                <a class="present-to-buy rel" href="javascript:void(0)"><i style="background-image: url('src/tv_0005_Подарок-к-покупке.png')"></i></a>
             </div>
         </div>
     </div>
@@ -281,16 +279,16 @@
     <ul class="add-list flt-l list-none">
         <li><a href="javascript:void(0)" class="link dotted-link accessoires-link"><span
                 class="gray">Крепежи  настенные </span><span
-                class="black">17</span></a></li>
+                class="black">17</span><i class="sp popup-link"></i></a></li>
         <li><a href="javascript:void(0)" class="link dotted-link accessoires-link"><span
                 class="gray">ТВ-приставки </span><span
-                class="black">3</span></a></li>
+                class="black">3</span><i class="sp popup-link"></i></a></li>
         <li><a href="javascript:void(0)" class="link dotted-link accessoires-link"><span
                 class="gray">ТВ-приставки </span><span
-                class="black">5</span></a></li>
+                class="black">5</span><i class="sp popup-link"></i></a></li>
         <li><a href="javascript:void(0)" class="link dotted-link accessoires-link"><span
                 class="gray">ТВ-приставки </span><span
-                class="black">3</span></a></li>
+                class="black">3</span><i class="sp popup-link"></i></a></li>
     </ul>
 </div>
 <hr class="dotted-line">
@@ -329,8 +327,8 @@
     <li id="windowTab3">
         <a class="link dotted-link" href="javascript:void(0)">Отзывы<span
                 class="black"> 24</span></a></li>
-    <li id="windowTab4">
-        <a class="link dotted-link" href="javascript:void(0)">Аксессуары<span
+    <li>
+        <a class="link dotted-link accessoires-link" href="javascript:void(0)">Аксессуары<span
                 class="black"> 144</span></a>
         <i class="sp popup-link popup-link-black"></i></li>
 </ul>
@@ -1109,6 +1107,10 @@
                     <label class="form-label">Недостатки</label>
                     <textarea class="form-input" placeholder=""></textarea>
                 </div>
+                <div class="form-row">
+                    <label class="form-label">Комментарии</label>
+                    <textarea class="form-input" placeholder=""></textarea>
+                </div>
                 <div style="padding-left: 505px;" class="form-row">
                     <label class="form-label">Если вы совершали покупку у нас, пожалуйста, укажите номер заказа
                     </label>
@@ -1672,7 +1674,4 @@
 </div>
 
 </body>
-<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="j.js" type="text/javascript"></script>
-
 </html>
