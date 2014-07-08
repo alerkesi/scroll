@@ -219,7 +219,8 @@ a {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     background-color: #efefef;
-    padding: 5px 20px 20px;
+    padding: 20px 10px 20px 20px;
+    margin-bottom: 30px;
 }
 .item-tile .label.for-checkbox > *{
     vertical-align: middle;
@@ -1004,6 +1005,22 @@ input[type="checkbox"]:checked:disabled + i {
     width: 140px;
     height: 40px;
     background-position: 0px -620px;
+}
+.analog-btn {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.analog-btn .sp {
+    width: 220px;
+    height: 40px;
+    background-position: -602px -620px;
+}
+.analog-btn .sp:hover {
+    background-position: -602px -660px;
+}
+.analog-btn .sp:active {
+    background-position: -602px -700px;
 }
 
 .button-publish .sp {
@@ -2629,6 +2646,7 @@ textarea.form-input {
     max-width: 100%;
     padding-top: 4px;
     padding-bottom: 4px;
+    padding-right: 8px;
 }
 .popup .menu li a {
     display: inline;
@@ -2647,4 +2665,31 @@ textarea.form-input {
 }
 .popup .menu li.selected a{
     border-bottom-color: transparent!important;
+}
+.disable-hover {
+    pointer-events: none;
+}
+
+.disable-hover * {
+    pointer-events: none !important;
+}
+.analog-catalog .catalog__item {
+    width: 220px;
+    margin-right: 20px;
+}
+.analog-catalog .catalog__item__photo {
+    height: 220px;
+    line-height: 220px;
+    position: relative;
+
+}
+.analog-catalog .catalog__item__photo img {
+    position: relative;
+    vertical-align: bottom;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.terms {
+    margin-top: 8px;
 }

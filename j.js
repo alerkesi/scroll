@@ -350,5 +350,15 @@ var createScroll = function (self) {
     });
 
 };
+var hoverTimer;
+window.addEventListener('scroll', function () {
+    clearTimeout(hoverTimer);
+    if (!document.body.classList.contains('disable-hover')) {
+        document.body.classList.add('disable-hover');
+    }
+    hoverTimer = setTimeout(function () {
+        document.body.classList.remove('disable-hover');
+    }, 500);
+}, false);
 
 /* End Catalog scroller */
