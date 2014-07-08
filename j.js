@@ -199,11 +199,29 @@ $(document).ready(function () {
     $('.catalog__item__name').text(function () {
         return this.text.ellipsis(50);
     });
-    bindToggleTab();
+    (function bindToggleTab () {
+        $('.tab-menu li').click(function () {
+            var clMenu = $(this).closest('.tab-menu'),
+                clContent = clMenu.next('.tabs-content');
+            clMenu.children('li').removeClass('selected');
+            clContent.children('li').removeClass('selected');
+            $(this).addClass('selected');
+            var targetTabContent = clContent.children("[data-tab-id$='" + this.id + "']");
+            targetTabContent.addClass('selected');
+
+        })
+    })();
+    var scrolls = $('.scroll-line');
+    scrolls.each(function (i, self) {
+        createScroll(self);
+    });
 });
-/* change main item images when mouseEnter on little */
-
-
+String.prototype.ellipsis = function (maxLength) {
+    return this.length > maxLength ? this.substr(0, maxLength - 3) + '...' : this;
+};
+var openOtzyvTab = function () {
+    $('#windowTab3').click();
+};
 var setMouseenterOnLittlePic = function (container) {
 
     var $littleImages = $(container).find('.js-littlePic');
@@ -237,31 +255,11 @@ var setMouseenterOnLittlePic = function (container) {
         restoreMainPic();
     });
 };
-String.prototype.ellipsis = function (maxLength) {
-    return this.length > maxLength ? this.substr(0, maxLength - 3) + '...' : this;
-};
-function openOtzyvTab() {
-    $('#windowTab3').click();
-};
-
-var bindToggleTab = function () {
-    $('.tab-menu li').click(function () {
-        var clMenu = $(this).closest('.tab-menu'),
-            clContent = clMenu.next('.tabs-content');
-        clMenu.children('li').removeClass('selected');
-        clContent.children('li').removeClass('selected');
-        $(this).addClass('selected');
-        var targetTabContent = clContent.children("[data-tab-id$='" + this.id + "']");
-        targetTabContent.addClass('selected');
-
-    })
-};
-
 /* Catalog scroller */
-function bindScroll(e) {
+var bindScroll = function (e) {
     e.preventDefault();
     if ($(this.catalog).is(':animated')) {
-        return false;
+        return;
     }
     var whDelta = e.deltaY || e.detail || e.wheelDelta;
     if (whDelta > 0 && this.forwardPossible()) {
@@ -269,8 +267,7 @@ function bindScroll(e) {
     } else if (whDelta < 0 && this.backPossible()) {
         back(this);
     }
-}
-
+};
 var forward = function (th) {
     if (th.horizontal) {
         $(th.catalog).animate({ left: "-=" + th.delta }, 200, function () {
@@ -305,11 +302,7 @@ var checkSwitch = function (th) {
         th.arrowBack.hide();
     }
 };
-var scrolls = $('.scroll-line');
-scrolls.each(function (i, self) {
-    createScroll(self);
-});
-function createScroll(self) {
+var createScroll = function (self) {
     self.horizontal = $(self).hasClass('horiz-scroll-line');
     self.vertical = !$(self).hasClass('horiz-scroll-line');
     self.tabs = $(self).find('.scroll-tabs');
@@ -362,5 +355,6 @@ function createScroll(self) {
             forward(self);
         }
     });
-}
+};
+
 /* End Catalog scroller */
