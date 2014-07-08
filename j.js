@@ -1,12 +1,4 @@
 $(document).ready(function () {
-    /* extend */
-//    if ($.fn.hasOwnProperty('hide')) {
-//        var _oldhide = $.fn.hide;
-//        $.fn.hide = function (speed, callback) {
-//            $(this).trigger('hide');
-//            return _oldhide.apply(this, arguments);
-//        }
-//    }
     /* popup modules */
     $('.otzyv-textarea').click(function () {
         $('#otzyv-popup').show();
@@ -111,6 +103,7 @@ $(document).ready(function () {
         var $popup = $('#all-br-items');
         openPopup($popup);
     });
+    /* end popup*/
     $('.starbar-big')
         .mousemove(function (e) {
         var x = e.pageX - getOffsetRect(e.target).left;
@@ -329,37 +322,34 @@ function createScroll(self) {
     self.arrowBack = $(self).find('.arrow-back');
     self.kulisa = $(self).find('.catalog__kulisa');
     self.kulisa.css({
-        width: (1 - (parseInt(self.areaSizePx / self.delta) + 1 - self.areaSizePx / self.delta)) * self.delta,
-        left: parseInt(self.areaSizePx / self.delta) * self.delta
+        width: (1 - (parseInt(self.areaSizePx / self.delta, 10) + 1 - self.areaSizePx / self.delta)) * self.delta,
+        left: parseInt(self.areaSizePx / self.delta, 10) * self.delta
     });
     $(window).resize(function () {
         self.areaSizePx = self.horizontal ? self.tabs.width() : self.tabs.height();
         checkSwitch(self);
         self.kulisa.css({
-            width: (1 - (parseInt(self.areaSizePx / self.delta) + 1 - self.areaSizePx / self.delta)) * self.delta,
-            left: parseInt(self.areaSizePx / self.delta) * self.delta
+            width: (1 - (parseInt(self.areaSizePx / self.delta, 10) + 1 - self.areaSizePx / self.delta)) * self.delta,
+            left: parseInt(self.areaSizePx / self.delta, 10) * self.delta
         });
     });
     self.forwardPossible = function () {
-        return self.catalogSizePx + parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top'))) - self.areaSizePx > 0;
+        return self.catalogSizePx + parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top')), 10) - self.areaSizePx > 0;
     };
     self.backPossible = function () {
-        return parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top'))) < 0;
+        return parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top')), 10) < 0;
     };
     checkSwitch(self);
 
     if (self.addEventListener) {
         if ('onwheel' in document) {
-            // IE9+, FF17+
             self.addEventListener("wheel", bindScroll, false);
         } else if ('onmousewheel' in document) {
-            // ���������� ������� �������
             self.addEventListener("mousewheel", bindScroll, false);
         } else {
-            // 3.5 <= Firefox < 17, ����� ������ ������� DOMMouseScroll ���������
             self.addEventListener("MozMousePixelScroll", bindScroll, false);
         }
-    } else { // IE<9
+    } else {
         self.attachEvent("onmousewheel", bindScroll);
     }
     $(self.arrowBack).on('click', function () {
