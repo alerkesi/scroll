@@ -256,52 +256,7 @@ var setMouseenterOnLittlePic = function (container) {
     });
 };
 /* Catalog scroller */
-var bindScroll = function (e) {
-    e.preventDefault();
-    if ($(this.catalog).is(':animated')) {
-        return;
-    }
-    var whDelta = e.deltaY || e.detail || e.wheelDelta;
-    if (whDelta > 0 && this.forwardPossible()) {
-        forward(this);
-    } else if (whDelta < 0 && this.backPossible()) {
-        back(this);
-    }
-};
-var forward = function (th) {
-    if (th.horizontal) {
-        $(th.catalog).animate({ left: "-=" + th.delta }, 200, function () {
-            checkSwitch(th);
-        });
-    } else {
-        $(th.catalog).animate({ top: "-=" + th.delta }, 200, function () {
-            checkSwitch(th);
-        });
-    }
-};
-var back = function (th) {
-    if (th.horizontal) {
-        $(th.catalog).animate({ left: "+=" + th.delta }, 200, function () {
-            checkSwitch(th);
-        });
-    } else {
-        $(th.catalog).animate({ top: "+=" + th.delta }, 200, function () {
-            checkSwitch(th);
-        });
-    }
-};
-var checkSwitch = function (th) {
-    if (th.forwardPossible()) {
-        th.arrowForward.show();
-    } else {
-        th.arrowForward.hide();
-    }
-    if (th.backPossible()) {
-        th.arrowBack.show();
-    } else {
-        th.arrowBack.hide();
-    }
-};
+
 var createScroll = function (self) {
     self.horizontal = $(self).hasClass('horiz-scroll-line');
     self.vertical = !$(self).hasClass('horiz-scroll-line');
@@ -318,43 +273,76 @@ var createScroll = function (self) {
         width: (1 - (parseInt(self.areaSizePx / self.delta, 10) + 1 - self.areaSizePx / self.delta)) * self.delta,
         left: parseInt(self.areaSizePx / self.delta, 10) * self.delta
     });
-    $(window).resize(function () {
-        self.areaSizePx = self.horizontal ? self.tabs.width() : self.tabs.height();
-        checkSwitch(self);
-        self.kulisa.css({
-            width: (1 - (parseInt(self.areaSizePx / self.delta, 10) + 1 - self.areaSizePx / self.delta)) * self.delta,
-            left: parseInt(self.areaSizePx / self.delta, 10) * self.delta
-        });
-    });
     self.forwardPossible = function () {
         return self.catalogSizePx + parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top')), 10) - self.areaSizePx > 0;
     };
     self.backPossible = function () {
         return parseInt(self.horizontal ? $(self.catalog).css('left') : ($(self.catalog).css('top')), 10) < 0;
     };
-    checkSwitch(self);
-
+    self.checkSwitch = function () {
+        if (self.forwardPossible()) {
+            self.arrowForward.show();
+        } else {
+            self.arrowForward.hide();
+        }
+        if (self.backPossible()) {
+            self.arrowBack.show();
+        } else {
+            self.arrowBack.hide();
+        }
+    };
+    self.forward = function () {
+        if (self.forwardPossible() && !$(self.catalog).is(':animated')) {
+            if (self.horizontal) {
+                $(self.catalog).animate({ left: "-=" + self.delta }, 200);
+            } else {
+                $(self.catalog).animate({ top: "-=" + self.delta }, 200);
+            }
+            setTimeout(self.checkSwitch, 500);
+        }
+    };
+    self.back = function () {
+        if (self.backPossible() && !$(self.catalog).is(':animated')){
+            if (self.horizontal) {
+                $(self.catalog).animate({ left: "+=" + self.delta }, 200);
+            } else {
+                $(self.catalog).animate({ top: "+=" + self.delta }, 200);
+            }
+            setTimeout(self.checkSwitch, 500);
+        }
+    };
+    self.bindScroll = function (e) {
+        e.preventDefault();
+        var whDelta = e.deltaY || e.detail || e.wheelDelta;
+        if (whDelta > 0) {
+            self.forward();
+        } else if (whDelta < 0) {
+            self.back();
+        }
+    };
+    self.checkSwitch();
     if (self.addEventListener) {
         if ('onwheel' in document) {
-            self.addEventListener("wheel", bindScroll, false);
+            self.addEventListener("wheel", self.bindScroll, false);
         } else if ('onmousewheel' in document) {
-            self.addEventListener("mousewheel", bindScroll, false);
+            self.addEventListener("mousewheel", self.bindScroll, false);
         } else {
-            self.addEventListener("MozMousePixelScroll", bindScroll, false);
+            self.addEventListener("MozMousePixelScroll", self.bindScroll, false);
         }
     } else {
-        self.attachEvent("onmousewheel", bindScroll);
+        self.attachEvent("onmousewheel", self.bindScroll);
     }
-    $(self.arrowBack).on('click', function () {
-        if (self.backPossible()) {
-            back(self);
-        }
+    self.arrowBack.click(self.back);
+    self.arrowForward.click(self.forward);
+    $(window).resize(function () {
+        self.areaSizePx = self.horizontal ? self.tabs.width() : self.tabs.height();
+        self.checkSwitch();
+        self.kulisa.css({
+            width: (1 - (parseInt(self.areaSizePx / self.delta, 10) + 1 - self.areaSizePx / self.delta)) * self.delta,
+            left: parseInt(self.areaSizePx / self.delta, 10) * self.delta
+        });
     });
-    $(self.arrowForward).on('click', function () {
-        if (self.forwardPossible()) {
-            forward(self);
-        }
-    });
+
 };
 
 /* End Catalog scroller */

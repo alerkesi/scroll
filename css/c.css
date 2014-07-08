@@ -46,15 +46,6 @@ ol, ul {
     list-style: none
 }
 
-blockquote, q {
-    quotes: none
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none
-}
-
 table {
     border-collapse: collapse;
     border-spacing: 0
@@ -209,10 +200,6 @@ a {
 
 .footer {
     max-width: 1180px;
-}
-
-.market__wrapper {
-    background-color: #E6E6E6;
 }
 
 .market__navy {
