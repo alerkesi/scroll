@@ -3,7 +3,11 @@ $(document).ready(function () {
     $('.otzyv-textarea').click(function () {
         $('#otzyv-popup').show();
     });
-
+    var scrolls = $('.scroll-line');
+    var $footer = $('footer.footer');
+    var footerScrolls = $footer.find('.scroll-line');
+    var $popup = $('.popup');
+    var $popupOut = $('.popup-out');
     var itemName = $('.js-item-name').text();
     $('.js-showPicturePopup').click(function () {
         var $popup = $('#picture-popup');
@@ -144,8 +148,6 @@ $(document).ready(function () {
     }
 
     /* -----*/
-    var $popup = $('.popup');
-    var $popupOut = $('.popup-out');
     $popupOut.click(function () {
         closePopup($(this));
     });
@@ -180,7 +182,6 @@ $(document).ready(function () {
 
     /* ------ */
     setMouseenterOnLittlePic(document.getElementById('pictures-content'));
-    var $footer = $('footer.footer');
     $footer.closeX = $footer.find('.close');
     $footer.footBody = $footer.find('.footer-body');
     $footer.tabs = $footer.find('.footer-tab');
@@ -190,11 +191,13 @@ $(document).ready(function () {
         $footer.tabs.removeClass('selected');
     });
     $footer.tabs.on('click', function () {
-        $footer.footBody.slideDown(400);
+        $footer.footBody.slideDown(400, function (){
+            footerScrolls.each(function (i, s) {
+                createScroll(s);
+            })
+        });
         $footer.closeX.show();
-        scrolls.each(function (i, s) {
-            createScroll(s);
-        })
+
     });
     $('.catalog__item__name').text(function () {
         return this.text.ellipsis(50);
@@ -214,7 +217,6 @@ $(document).ready(function () {
 
         })
     })();
-    var scrolls = $('.scroll-line');
     scrolls.each(function (i, self) {
         createScroll(self);
     });
